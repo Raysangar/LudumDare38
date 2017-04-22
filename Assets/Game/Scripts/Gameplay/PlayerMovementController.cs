@@ -8,7 +8,6 @@ public class PlayerMovementController : MonoBehaviour
   private void Start ()
   {
     navMeshAgent = GetComponent<NavMeshAgent> ();
-    cachedTransform = transform;
     PointAndClickManager.OnSmartObjectClicked += OnSmartObjectClicked;
   }
 
@@ -26,11 +25,19 @@ public class PlayerMovementController : MonoBehaviour
     yield return new WaitUntil (IsCloseToTarget);
 
     float time = 0;
-    Vector3 origin = cachedTransform.forward;
-    float duration = (target.SmartPosition.forward - origin).magnitude / angularSpeed;
-    while (!LookingToSmartObject)
+    Quaternion origin = transform.rotation;
+    Quaternion targetRotation = target.SmartPosition.rotation;
+    if (Quaternion.Angle (origin, targetRotation) > Quaternion.Angle (targetRotation, origin))
     {
-      cachedTransform.forward = Vector3.Lerp (origin, target.SmartPosition.forward, Mathf.InverseLerp (0, duration, time));
+      Quaternion aux = origin;
+      origin = targetRotation;
+      targetRotation = aux;
+    }
+
+    float duration = Quaternion.Angle (origin, targetRotation) / angularSpeed;
+    while (time < duration)
+    {
+      transform.rotation = Quaternion.Slerp (origin, targetRotation, Mathf.InverseLerp (0, duration, time));
       yield return null;
       time += Time.deltaTime;
     }
@@ -38,17 +45,9 @@ public class PlayerMovementController : MonoBehaviour
     target.Interact ();
   }
 
-  private bool LookingToSmartObject
-  {
-    get
-    {
-      return (target.SmartPosition.forward - cachedTransform.forward).sqrMagnitude < angularThreshold;
-    }
-  }
-
   private bool IsCloseToTarget ()
   {
-    return (target.SmartPosition.position - cachedTransform.position).sqrMagnitude < distanceThreshold;
+    return (target.SmartPosition.position - transform.position).sqrMagnitude < distanceThreshold;
   }
 
   [SerializeField]
@@ -57,10 +56,6 @@ public class PlayerMovementController : MonoBehaviour
   [SerializeField]
   private float distanceThreshold;
 
-  [SerializeField]
-  private float angularThreshold;
-
   private SmartObject target;
-  private Transform cachedTransform;
   private NavMeshAgent navMeshAgent;
 }
