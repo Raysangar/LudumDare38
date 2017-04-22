@@ -4,7 +4,7 @@ using UnityEngine;
 public class PointAndClickManager : MonoBehaviour
 {
   public delegate void SmartObjectClickedHandler (SmartObject smartObject);
-  public static SmartObjectClickedHandler OnSmartObjectClicked;
+  public static SmartObjectClickedHandler OnSmartObjectClicked = delegate { };
 
   void Awake ()
   {
@@ -17,17 +17,15 @@ public class PointAndClickManager : MonoBehaviour
     Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
     RaycastHit hit;
 
-    if (Physics.Raycast (ray, out hit))
+    if (Physics.Raycast (ray, out hit) && checkLayer (hit.transform.gameObject.layer))
     {
-      if (checkLayer (hit.transform.gameObject.layer))
+      SmartObject smartObject = hit.transform.gameObject.GetComponent<SmartObject> ();
+      if (ActionsManager.Instance.IsSmartObjectInteractableOnCurrentStage (smartObject))
       {
-        enableLayerInCullingMask (hit.transform.root.gameObject.GetComponent<SmartObject> ().MeshTransform.gameObject.layer);
+        enableLayerInCullingMask (smartObject.MeshTransform.gameObject.layer);
         if (Input.GetMouseButtonDown (0))
         {
-          if (OnSmartObjectClicked != null)
-          {
-            OnSmartObjectClicked (hit.transform.root.gameObject.GetComponent<SmartObject> ());
-          }
+          OnSmartObjectClicked (smartObject);
         }
       }
       else

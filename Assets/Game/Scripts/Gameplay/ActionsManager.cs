@@ -1,14 +1,28 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionsManager : MonoBehaviour {
+public class ActionsManager : MonoBehaviour
+{
+  public static System.Action<Stage> OnStageFinished = delegate { };
 
-  public bool IsSmartObjectAlreadyUsedOnCurrentStage (SmartObject smartObject)
+  public class Stage
   {
-    return actionsMadeByPlayerOnCurrentStage.Contains (smartObject);
+    public SmartObject FirstAction;
+    public SmartObject SecondAction;
   }
 
-  public List<SmartObject> ActionsMadeByPlayerOnCurrentStage
+  public static ActionsManager Instance
+  {
+    get { return instance; }
+  }
+
+  public bool IsSmartObjectInteractableOnCurrentStage (SmartObject smartObject)
+  {
+    return (actionsMadeByPlayerOnCurrentStage.FirstAction != null && actionsMadeByPlayerOnCurrentStage.FirstAction != smartObject) ||
+      (actionsMadeByPlayerOnCurrentStage.FirstAction == null && smartObject.Type != SmartObject.ObjectType.House);
+  }
+
+  public Stage ActionsMadeByPlayerOnCurrentStage
   {
     get
     {
@@ -16,7 +30,12 @@ public class ActionsManager : MonoBehaviour {
     }
   }
 
-  public List<List<SmartObject>> ActionsMadeByPlayerOnPreviousStages
+  public Stage ActionsMadeByPlayerOnLastStage
+  {
+    get { return actionsMadeByPlayerOnPreviousStages[actionsMadeByPlayerOnPreviousStages.Count - 1]; }
+  }
+
+  public List<Stage> ActionsMadeByPlayerOnPreviousStages
   {
     get
     {
@@ -26,23 +45,29 @@ public class ActionsManager : MonoBehaviour {
 
   private void Awake ()
   {
-    actionsMadeByPlayerOnCurrentStage = new List<SmartObject> ();
-    actionsMadeByPlayerOnPreviousStages = new List<List<SmartObject>> ();
+    instance = this;
+    actionsMadeByPlayerOnCurrentStage = new Stage ();
+    actionsMadeByPlayerOnPreviousStages = new List<Stage> ();
     SmartObject.OnPlayerInteraction += OnPlayerInteractedWithSmartObject;
-    GameController.OnStageChanged += OnStageChanged;
   }
 
   private void OnPlayerInteractedWithSmartObject (SmartObject smartObject)
   {
-    actionsMadeByPlayerOnCurrentStage.Add (smartObject);
+    if (actionsMadeByPlayerOnCurrentStage.FirstAction == null)
+    {
+      actionsMadeByPlayerOnCurrentStage.FirstAction = smartObject;
+    }
+    else
+    {
+      actionsMadeByPlayerOnCurrentStage.SecondAction = smartObject;
+      actionsMadeByPlayerOnPreviousStages.Add (actionsMadeByPlayerOnCurrentStage);
+      actionsMadeByPlayerOnCurrentStage = new Stage ();
+      OnStageFinished (ActionsMadeByPlayerOnLastStage);
+    }
   }
 
-  private void OnStageChanged ()
-  {
-    actionsMadeByPlayerOnPreviousStages.Add (actionsMadeByPlayerOnCurrentStage);
-    actionsMadeByPlayerOnCurrentStage = new List<SmartObject> ();
-  }
+  private Stage actionsMadeByPlayerOnCurrentStage;
+  private List<Stage> actionsMadeByPlayerOnPreviousStages;
 
-  private List<SmartObject> actionsMadeByPlayerOnCurrentStage;
-  private List<List<SmartObject>> actionsMadeByPlayerOnPreviousStages;
+  private static ActionsManager instance;
 }
