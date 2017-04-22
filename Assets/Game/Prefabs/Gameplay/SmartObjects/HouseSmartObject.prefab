@@ -179,4 +179,6 @@ MonoBehaviour:
   smartPosition: {fileID: 4607449740181534}
   type: 2
   meshTransform: {fileID: 4333572883734732}
-  maxLevel: 0
+  maxUsage: 3
+  hungerFactor: 1
+  thirstFactor: 1
