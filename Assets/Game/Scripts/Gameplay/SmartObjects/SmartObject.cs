@@ -54,9 +54,39 @@ public abstract class SmartObject : MonoBehaviour
     }
   }
 
+  public virtual void AddUsage(bool needConstruction = false)
+  {
+    if ((currentUsage == maxUsage || currentUsage == -1) && needConstruction )
+    {
+      SetMaxUsage();
+    }
+    else
+    {
+      currentUsage++;
+    }
+  }
+
+  public virtual void SetGraphicByUsage()
+  {
+
+  }
+
+  private void Awake()
+  {
+    ActionsManager.OnStageFinished += OnStageFinished;
+  }
+
   public void SetMaxUsage()
   {
     currentUsage = 0;
+  }
+
+  private void OnStageFinished(ActionsManager.Stage stage)
+  {
+    if (type == stage.FirstAction.type || type == stage.SecondAction.type)
+    {
+      PlayerManager.Instance.EatAndDrink(-hungerFactor, -thirstFactor);
+    }
   }
 
   [SerializeField]
@@ -77,5 +107,5 @@ public abstract class SmartObject : MonoBehaviour
   [SerializeField]
   private int thirstFactor;
 
-  private int currentUsage;
+  private int currentUsage = -1;
 }
