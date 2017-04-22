@@ -6,34 +6,50 @@ public class PlayerController : MonoBehaviour
   private void Start ()
   {
     cachedTransform = transform;
+    PointAndClickManager.OnSmartObjectClicked += OnSmartObjectClicked;
   }
 
   private void OnSmartObjectClicked (SmartObject smartObject)
   {
     StopAllCoroutines ();
     target = smartObject;
-    movementPerSecond = (smartObject.SmartPosition.transform.position - cachedTransform.position).normalized * speed;
-    StartCoroutine (GoToTarget ());
+    movementDirection = (smartObject.SmartPosition.transform.position - cachedTransform.position).normalized;
+    StartCoroutine (GoInteractWithTarget ());
   }
 
-  private IEnumerator GoToTarget ()
+  private IEnumerator GoInteractWithTarget ()
   {
-    while (!LookingToSmartPosition)
+    // Look to smart position
+    float time = 0;
+    Vector3 origin = cachedTransform.forward;
+    float duration = (movementDirection - origin).magnitude / angularSpeed;
+    if (!IsCloseToTarget)
     {
-      cachedTransform.LookAt (target.SmartPosition);
-      yield return null;
+      while (!LookingToSmartPosition)
+      {
+        cachedTransform.forward = Vector3.Lerp (origin, movementDirection, Mathf.InverseLerp (0, duration, time));
+        yield return null;
+        time += Time.deltaTime;
+      }
     }
 
+    // Move to smart position
+    Vector3 movementPerSecond = movementDirection * speed;
     while (!IsCloseToTarget)
     {
       cachedTransform.position += movementPerSecond * Time.deltaTime;
       yield return null;
     }
 
+    // Look to smart object
+    time = 0;
+    origin = cachedTransform.forward;
+    duration = (target.SmartPosition.forward - origin).magnitude / angularSpeed;
     while (!LookingToSmartObject)
     {
-      cachedTransform.rotation = target.SmartPosition.rotation;
+      cachedTransform.forward = Vector3.Lerp (origin, target.SmartPosition.forward, Mathf.InverseLerp (0, duration, time));
       yield return null;
+      time += Time.deltaTime;
     }
 
     target.Interact ();
@@ -43,7 +59,7 @@ public class PlayerController : MonoBehaviour
   {
     get
     {
-      return true;
+      return (movementDirection - cachedTransform.forward).sqrMagnitude < angularThreshold;
     }
   }
 
@@ -51,7 +67,7 @@ public class PlayerController : MonoBehaviour
   {
     get
     {
-      return true;
+      return (target.SmartPosition.forward - cachedTransform.forward).sqrMagnitude < angularThreshold;
     }
   }
 
@@ -72,7 +88,10 @@ public class PlayerController : MonoBehaviour
   [SerializeField]
   private float distanceThreshold;
 
+  [SerializeField]
+  private float angularThreshold;
+
   private SmartObject target;
-  private Vector3 movementPerSecond;
+  private Vector3 movementDirection;
   private Transform cachedTransform;
 }
