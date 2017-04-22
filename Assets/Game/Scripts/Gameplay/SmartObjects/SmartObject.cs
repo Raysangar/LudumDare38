@@ -7,7 +7,7 @@ public abstract class SmartObject : MonoBehaviour
 
   public enum ObjectType
   {
-    Tree, Lake, House, Moon
+    Wood, Water, House, Garden, Ranch
   }
 
   public Transform SmartPosition
@@ -25,6 +25,26 @@ public abstract class SmartObject : MonoBehaviour
     get { return type; }
   }
 
+  public int MaxUsage
+  {
+    get { return maxUsage; }
+  }
+
+  public int CurrentUsage
+  {
+    get { return currentUsage; }
+  }
+
+  public int ThirstFactor
+  {
+    get { return thirstFactor; }
+  }
+
+  public int HungerFactor
+  {
+    get { return hungerFactor; }
+  }
+
   public virtual void Interact ()
   {
     OnPlayerInteraction (this);
@@ -38,4 +58,15 @@ public abstract class SmartObject : MonoBehaviour
 
   [SerializeField]
   private Transform meshTransform;
+
+  [SerializeField]
+  private int maxUsage;
+
+  [SerializeField]
+  private int hungerFactor;
+
+  [SerializeField]
+  private int thirstFactor;
+
+  private int currentUsage;
 }
