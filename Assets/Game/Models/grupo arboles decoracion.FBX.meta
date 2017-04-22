@@ -18,6 +18,9 @@ ModelImporter:
     100020: pino012
     100022: pino03
     100024: pino05
+    100026: pino02
+    100028: pino020
+    100030: pino04
     400000: //RootNode
     400002: pino
     400004: pino00
@@ -31,6 +34,9 @@ ModelImporter:
     400020: pino012
     400022: pino03
     400024: pino05
+    400026: pino02
+    400028: pino020
+    400030: pino04
     2300000: pino
     2300002: pino00
     2300004: pino006
@@ -43,6 +49,9 @@ ModelImporter:
     2300018: pino012
     2300020: pino03
     2300022: pino05
+    2300024: pino02
+    2300026: pino020
+    2300028: pino04
     3300000: pino
     3300002: pino00
     3300004: pino006
@@ -55,6 +64,9 @@ ModelImporter:
     3300018: pino012
     3300020: pino03
     3300022: pino05
+    3300024: pino02
+    3300026: pino020
+    3300028: pino04
     4300000: pino03
     4300002: pino05
     4300004: pino00
@@ -67,6 +79,9 @@ ModelImporter:
     4300018: pino010
     4300020: pino011
     4300022: pino012
+    4300024: pino04
+    4300026: pino02
+    4300028: pino020
     9500000: //RootNode
   materials:
     importMaterials: 1

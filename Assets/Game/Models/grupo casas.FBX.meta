@@ -9,19 +9,29 @@ ModelImporter:
     100002: //RootNode
     100004: piso extra
     100006: piso extra001
+    100008: Piso base
+    100010: piso construccion
     400000: Box010
     400002: //RootNode
     400004: piso extra
     400006: piso extra001
+    400008: Piso base
+    400010: piso construccion
     2300000: Box010
     2300002: piso extra
     2300004: piso extra001
+    2300006: Piso base
+    2300008: piso construccion
     3300000: Box010
     3300002: piso extra
     3300004: piso extra001
+    3300006: Piso base
+    3300008: piso construccion
     4300000: Box010
     4300002: piso extra
     4300004: piso extra001
+    4300006: Piso base
+    4300008: piso construccion
     9500000: //RootNode
   materials:
     importMaterials: 1
