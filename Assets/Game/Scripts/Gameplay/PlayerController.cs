@@ -14,20 +14,23 @@ public class PlayerController : MonoBehaviour
     StopAllCoroutines ();
     target = smartObject;
     movementDirection = (smartObject.SmartPosition.transform.position - cachedTransform.position).normalized;
-    StartCoroutine (GoToTarget ());
+    StartCoroutine (GoInteractWithTarget ());
   }
 
-  private IEnumerator GoToTarget ()
+  private IEnumerator GoInteractWithTarget ()
   {
     // Look to smart position
     float time = 0;
     Vector3 origin = cachedTransform.forward;
     float duration = (movementDirection - origin).magnitude / angularSpeed;
-    while (!LookingToSmartPosition)
+    if (!IsCloseToTarget)
     {
-      cachedTransform.forward = Vector3.Lerp (origin, movementDirection, Mathf.InverseLerp (0, duration, time));
-      yield return null;
-      time += Time.deltaTime;
+      while (!LookingToSmartPosition)
+      {
+        cachedTransform.forward = Vector3.Lerp (origin, movementDirection, Mathf.InverseLerp (0, duration, time));
+        yield return null;
+        time += Time.deltaTime;
+      }
     }
 
     // Move to smart position
