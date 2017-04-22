@@ -13,5 +13,10 @@ public class HouseSmartObject : SmartObject
     print("Interaction With House");
   }
 
+  public void IncreaseLevel()
+  {
+    level++;
+  }
+
   private int level;
 }

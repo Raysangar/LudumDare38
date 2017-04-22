@@ -45,9 +45,18 @@ public abstract class SmartObject : MonoBehaviour
     get { return hungerFactor; }
   }
 
-  public virtual void Interact ()
+  public virtual void Interact()
   {
-    OnPlayerInteraction (this);
+    OnPlayerInteraction(this);
+    if (currentUsage < maxUsage)
+    {
+      currentUsage++;
+    }
+  }
+
+  public void SetMaxUsage()
+  {
+    currentUsage = 0;
   }
 
   [SerializeField]

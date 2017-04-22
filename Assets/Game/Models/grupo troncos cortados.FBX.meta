@@ -1,15 +1,47 @@
 fileFormatVersion: 2
-guid: b8fc39f3003e9804eab61d490e84b70b
-timeCreated: 1492878048
+guid: 774317344e1304240a130a63d280b7be
+timeCreated: 1492881748
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: tronco
+    100004: tronco001
+    100006: tronco002
+    100008: tronco003
+    100010: tronco004
+    100012: tronco005
+    100014: tronco006
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: CASA 1
+    400002: tronco
+    400004: tronco001
+    400006: tronco002
+    400008: tronco003
+    400010: tronco004
+    400012: tronco005
+    400014: tronco006
+    2300000: tronco
+    2300002: tronco001
+    2300004: tronco002
+    2300006: tronco003
+    2300008: tronco004
+    2300010: tronco005
+    2300012: tronco006
+    3300000: tronco
+    3300002: tronco001
+    3300004: tronco002
+    3300006: tronco003
+    3300008: tronco004
+    3300010: tronco005
+    3300012: tronco006
+    4300000: tronco
+    4300002: tronco001
+    4300004: tronco002
+    4300006: tronco003
+    4300008: tronco004
+    4300010: tronco005
+    4300012: tronco006
     9500000: //RootNode
   materials:
     importMaterials: 1

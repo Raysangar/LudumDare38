@@ -46,10 +46,9 @@ public class PlayerManager : MonoBehaviour {
     currentWater += waterAmount;
   }
 
-  public void Eat (int foodAmount, int waterAmount)
+  public void Eat (int foodAmount)
   {
     currentFood += foodAmount;
-    currentWater += waterAmount;
   }
 
   public void StageFinished ()

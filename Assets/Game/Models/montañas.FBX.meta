@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0979959b0cf934242b97e74d29845efc
-timeCreated: 1492878047
+guid: e4057e5914b28074885cb8a15197c9e3
+timeCreated: 1492890900
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: tronco004
+    4300000: "Monta\xF1as"
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -20,6 +20,11 @@ public class PointAndClickManager : MonoBehaviour
     if (Physics.Raycast (ray, out hit) && checkLayer (hit.transform.gameObject.layer))
     {
       SmartObject smartObject = hit.transform.gameObject.GetComponent<SmartObject> ();
+      if (smartObject != lastSmartObject)
+      {
+        disableAllLayersInCullingMask();
+      }
+      lastSmartObject = smartObject;
       if (ActionsManager.Instance.IsSmartObjectInteractableOnCurrentStage (smartObject))
       {
         enableLayerInCullingMask (smartObject.MeshTransform.gameObject.layer);
@@ -61,11 +66,13 @@ public class PointAndClickManager : MonoBehaviour
 
   private bool checkLayer (int layer)
   {
-    return ((layerMask & (1 << layer)) > 0);
+    //return ((layerMask & (1 << layer)) > 0);
+    return LayerMask.LayerToName(layer).Equals(Constants.Layers.SmartObjects);
   }
 
   private Camera cameraOutline;
   private LayerMask layerMask;
+  private SmartObject lastSmartObject;
 
   [SerializeField]
   private List<LayerMask> layers;
