@@ -61,7 +61,8 @@ public class PointAndClickManager : MonoBehaviour
 
   private bool checkLayer (int layer)
   {
-    return ((layerMask & (1 << layer)) > 0);
+    //return ((layerMask & (1 << layer)) > 0);
+    return LayerMask.LayerToName(layer).Equals(Constants.Layers.SmartObjects);
   }
 
   private Camera cameraOutline;

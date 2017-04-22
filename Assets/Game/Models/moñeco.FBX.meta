@@ -1,22 +1,30 @@
 fileFormatVersion: 2
-guid: 4eda422a420c0024ca5a400dbab433eb
-timeCreated: 1492878048
+guid: f8a9047cacba6b84b8da7d731744e63a
+timeCreated: 1492884283
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: huerto
-    100004: Object001
+    100002: "mo\xF1eco_cabeza"
+    100004: "mo\xF1eco_pierna_der"
+    100006: "mo\xF1eco_pierna_izquierda"
     400000: //RootNode
-    400002: huerto
-    400004: Object001
-    2300000: huerto
-    2300002: Object001
-    3300000: huerto
-    3300002: Object001
-    4300000: huerto
-    4300002: Object001
+    400002: "mo\xF1eco_cabeza"
+    400004: "mo\xF1eco_pierna_der"
+    400006: "mo\xF1eco_pierna_izquierda"
+    2300000: //RootNode
+    2300002: "mo\xF1eco_cabeza"
+    2300004: "mo\xF1eco_pierna_der"
+    2300006: "mo\xF1eco_pierna_izquierda"
+    3300000: //RootNode
+    3300002: "mo\xF1eco_cabeza"
+    3300004: "mo\xF1eco_pierna_der"
+    3300006: "mo\xF1eco_pierna_izquierda"
+    4300000: "Mo\xF1eco"
+    4300002: "mo\xF1eco_pierna_izquierda"
+    4300004: "mo\xF1eco_pierna_der"
+    4300006: "mo\xF1eco_cabeza"
     9500000: //RootNode
   materials:
     importMaterials: 1

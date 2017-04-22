@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5b8f901fda7f4b44280c0fd43bd821cd
-timeCreated: 1492878048
+guid: ef701002d2b9c4f48b15ef707f4d18a0
+timeCreated: 1492881748
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: piso extra002
+    4300000: "Monta\xF1as"
     9500000: //RootNode
   materials:
     importMaterials: 1

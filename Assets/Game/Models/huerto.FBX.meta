@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: b8fc39f3003e9804eab61d490e84b70b
-timeCreated: 1492878048
+guid: 98cd9f490b5bfab4393dcba5ab5cf710
+timeCreated: 1492881748
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: huerto
+    100004: Object001
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: CASA 1
+    400002: huerto
+    400004: Object001
+    2300000: huerto
+    2300002: Object001
+    3300000: huerto
+    3300002: Object001
+    4300000: huerto
+    4300002: Object001
     9500000: //RootNode
   materials:
     importMaterials: 1
