@@ -599,48 +599,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 191f323392fed4147b01878df49d0d39, type: 3}
---- !u!1001 &1569526177
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -7.9414206
-      objectReference: {fileID: 0}
-    - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.713816
-      objectReference: {fileID: 0}
-    - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -3.767932
-      objectReference: {fileID: 0}
-    - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 828a524f222167b45988801ccd18afbe, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1671115691
 Prefab:
   m_ObjectHideFlags: 0

@@ -539,7 +539,17 @@ MonoBehaviour:
   firstActionIcon: {fileID: 114621176883390702}
   secondAction: {fileID: 1571104101304810}
   secondActionIcon: {fileID: 114079353078744070}
-  actionsHUDInfo: []
+  actionsHUDInfo:
+  - Action: 0
+    ActionIcon: {fileID: 0}
+  - Action: 1
+    ActionIcon: {fileID: 0}
+  - Action: 2
+    ActionIcon: {fileID: 0}
+  - Action: 3
+    ActionIcon: {fileID: 0}
+  - Action: 4
+    ActionIcon: {fileID: 0}
 --- !u!222 &222042378127768922
 CanvasRenderer:
   m_ObjectHideFlags: 1
