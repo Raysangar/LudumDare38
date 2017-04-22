@@ -37,8 +37,5 @@ public abstract class SmartObject : MonoBehaviour
   private ObjectType type;
 
   [SerializeField]
-  private Transform smartPosition;
-
-  [SerializeField]
   private Transform meshTransform;
 }
