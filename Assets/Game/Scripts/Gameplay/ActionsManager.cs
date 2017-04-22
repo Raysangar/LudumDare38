@@ -4,6 +4,7 @@ using UnityEngine;
 public class ActionsManager : MonoBehaviour
 {
   public static System.Action<Stage> OnStageFinished = delegate { };
+  public static System.Action OnPlayerPerformedAction = delegate{ };
 
   public class Stage
   {
@@ -56,12 +57,14 @@ public class ActionsManager : MonoBehaviour
     if (actionsMadeByPlayerOnCurrentStage.FirstAction == null)
     {
       actionsMadeByPlayerOnCurrentStage.FirstAction = smartObject;
+      OnPlayerPerformedAction ();
     }
     else
     {
       actionsMadeByPlayerOnCurrentStage.SecondAction = smartObject;
       actionsMadeByPlayerOnPreviousStages.Add (actionsMadeByPlayerOnCurrentStage);
       actionsMadeByPlayerOnCurrentStage = new Stage ();
+      OnPlayerPerformedAction ();
       OnStageFinished (ActionsMadeByPlayerOnLastStage);
     }
   }

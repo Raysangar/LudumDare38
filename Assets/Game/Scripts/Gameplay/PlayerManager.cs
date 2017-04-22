@@ -25,6 +25,22 @@ public class PlayerManager : MonoBehaviour {
     }
   }
 
+  public int MaxFood
+  {
+    get
+    {
+      return maxFood;
+    }
+  }
+
+  public int MaxWater
+  {
+    get
+    {
+      return maxWater;
+    }
+  }
+
   public void Drink (int waterAmount)
   {
     currentWater += waterAmount;
@@ -53,15 +69,15 @@ public class PlayerManager : MonoBehaviour {
   private void Awake ()
   {
     instance = this;
-    currentFood = initialFood;
-    currentWater = initialWater;
+    currentFood = maxFood;
+    currentWater = maxWater;
   }
 
   [SerializeField]
-  private int initialFood;
+  private int maxFood;
 
   [SerializeField]
-  private int initialWater;
+  private int maxWater;
 
   [SerializeField]
   private int foodLostEveryStage;

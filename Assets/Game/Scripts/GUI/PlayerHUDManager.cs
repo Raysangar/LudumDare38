@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class GameplayHUDManager : MonoBehaviour {
+public class PlayerHUDManager : MonoBehaviour {
 
   private void Start ()
   {
@@ -19,8 +19,8 @@ public class GameplayHUDManager : MonoBehaviour {
 
   private void UpdateHUD ()
   {
-    foodLabel.text = foodAmount.ToString ();
-    waterLabel.text = waterAmount.ToString ();
+    foodLabel.text = foodAmount + "/" + PlayerManager.Instance.MaxFood;
+    waterLabel.text = waterAmount + "/" + PlayerManager.Instance.MaxWater;
   }
 
   [SerializeField]
