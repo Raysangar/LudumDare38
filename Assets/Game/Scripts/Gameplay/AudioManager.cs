@@ -24,7 +24,9 @@ public class AudioManager : MonoBehaviour
 		TakeWater,
 		Wrong,
 		Build,
-		UIButton
+		UIButton,
+		Monument,
+		Bark
 	}
 
 
@@ -74,7 +76,7 @@ public class AudioManager : MonoBehaviour
 
 	private void OnPlayerUpgradeMonument ()
 	{
-		//PlaySound (AudioType.Eat);
+		PlaySound (AudioType.Monument);
 	}
 
 	private void OnPlayerUpgradeHouse ()

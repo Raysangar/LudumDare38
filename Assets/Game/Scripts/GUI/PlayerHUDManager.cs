@@ -7,13 +7,8 @@ public class PlayerHUDManager : MonoBehaviour {
   {
     ActionsManager.OnStageFinished += OnStageFinished;
     foodAmount = PlayerManager.Instance.CurrentFood;
-    waterAmount = PlayerManager.Instance.CurrentWater;
     UpdateHUD ();
     foreach (BaseTweener tweener in foodDifferenceTweeners)
-    {
-      tweener.ResetToBeginning ();
-    }
-    foreach (BaseTweener tweener in waterDifferenceTweeners)
     {
       tweener.ResetToBeginning ();
     }
@@ -25,12 +20,7 @@ public class PlayerHUDManager : MonoBehaviour {
     {
       SetDifferenceTextAnimation (PlayerManager.Instance.CurrentFood - foodAmount, foodDifferenceLabel, foodDifferenceTweeners);
     }
-    if (waterAmount != PlayerManager.Instance.CurrentWater)
-    {
-      SetDifferenceTextAnimation (PlayerManager.Instance.CurrentWater - waterAmount, waterDifferenceLabel, waterDifferenceTweeners);
-    }
     foodAmount = PlayerManager.Instance.CurrentFood;
-    waterAmount = PlayerManager.Instance.CurrentWater;
     UpdateHUD ();
   }
 
@@ -47,20 +37,13 @@ public class PlayerHUDManager : MonoBehaviour {
   private void UpdateHUD ()
   {
     foodLabel.text = foodAmount + "/" + PlayerManager.Instance.MaxFood;
-    waterLabel.text = waterAmount + "/" + PlayerManager.Instance.MaxWater;
   }
 
   [SerializeField]
   private Text foodLabel;
 
   [SerializeField]
-  private Text waterLabel;
-
-  [SerializeField]
   private Text foodDifferenceLabel;
-
-  [SerializeField]
-  private Text waterDifferenceLabel;
 
   [SerializeField]
   private Color positiveDifferenceColor = Color.green;
@@ -71,9 +54,5 @@ public class PlayerHUDManager : MonoBehaviour {
   [SerializeField]
   private BaseTweener[] foodDifferenceTweeners;
 
-  [SerializeField]
-  private BaseTweener[] waterDifferenceTweeners;
-
   private int foodAmount;
-  private int waterAmount;
 }

@@ -18,32 +18,36 @@ public class ActionsHUDManager : MonoBehaviour {
 
   private void Start ()
   {
-    OnStageFinished ();
+    UpdateHUD ();
   }
 
   private void OnStageFinished ()
   {
     firstActionTweener.PlayBackwards ();
     secondActionTweener.PlayBackwards ();
+    firstActionBackground.color = pendingActionBackground;
+    secondActionBackground.color = pendingActionBackground;
   }
 
   private void UpdateHUD ()
   {
     ActionsManager.Stage stageActions = ActionsManager.Instance.ActionsMadeByPlayerOnCurrentStage;
-    UpdateAction (firstActionIcon, firstActionTweener, stageActions.FirstAction);
-    UpdateAction (secondActionIcon, secondActionTweener, stageActions.SecondAction);
+    UpdateAction (firstActionIcon, firstActionBackground, firstActionTweener, stageActions.FirstAction);
+    UpdateAction (secondActionIcon, secondActionBackground, secondActionTweener, stageActions.SecondAction);
   }
 
-  private void UpdateAction (Image actionIcon, TweenScale tweener, SmartObject action)
+  private void UpdateAction (Image actionIcon, Image actionBackground, TweenScale tweener, SmartObject action)
   {
     if (action != null)
     {
       actionIcon.enabled = true;
+      actionBackground.color = actionPerformedBacground;
       actionIcon.sprite = actionsHUDInfo.Find ((info) => info.Action == action.Type).ActionIcon;
       tweener.PlayForward ();
     }
     else
     {
+      actionBackground.color = pendingActionBackground;
       actionIcon.enabled = false;
     }
   }
@@ -55,11 +59,23 @@ public class ActionsHUDManager : MonoBehaviour {
   private TweenScale firstActionTweener;
 
   [SerializeField]
+  private Image firstActionBackground;
+
+  [SerializeField]
   private Image secondActionIcon;
 
   [SerializeField]
   private TweenScale secondActionTweener;
 
   [SerializeField]
+  private Image secondActionBackground;
+
+  [SerializeField]
   private ActionHUDInfo[] actionsHUDInfo;
+
+  [SerializeField]
+  private Color actionPerformedBacground;
+
+  [SerializeField]
+  private Color pendingActionBackground;
 }
