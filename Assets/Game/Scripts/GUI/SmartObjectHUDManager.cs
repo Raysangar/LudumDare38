@@ -19,6 +19,14 @@ public class SmartObjectHUDManager : MonoBehaviour
   {
     if (target.CurrentUsage != remainUsesAmount)
     {
+      if (remainUsesAmount < 0)
+      {
+        remainUsesAmount = 0;
+      }
+      if (target.CurrentUsage == -1)
+      {
+        remainUsesAmount -= 1;
+      }
       modifiedUsesLabel.text = (target.CurrentUsage - remainUsesAmount).ToString("+#;-#;0");
       modifiedUsesLabel.color = (remainUsesAmount > target.CurrentUsage) ? removedUsesColor : addedUsesColor;
       foreach(BaseTweener tweener in usesModifiedTweeners)
@@ -37,7 +45,7 @@ public class SmartObjectHUDManager : MonoBehaviour
 
   private void UpdateHUD ()
   {
-    usesLabel.text = remainUsesAmount + "/" + target.MaxUsage;
+    usesLabel.text = (remainUsesAmount == -1) ? "0/0" : remainUsesAmount + "/" + target.MaxUsage;
   }
 
   [SerializeField]
