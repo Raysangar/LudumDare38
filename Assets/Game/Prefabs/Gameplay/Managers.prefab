@@ -229,9 +229,9 @@ MonoBehaviour:
     consequence:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114730560011153994}
-          m_MethodName: Drink
-          m_Mode: 3
+        - m_Target: {fileID: 114659071988546570}
+          m_MethodName: CheckDrinkin
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -247,9 +247,9 @@ MonoBehaviour:
     consequence:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114730560011153994}
-          m_MethodName: Eat
-          m_Mode: 3
+        - m_Target: {fileID: 114659071988546570}
+          m_MethodName: CheckEatingGarden
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -265,9 +265,9 @@ MonoBehaviour:
     consequence:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114730560011153994}
-          m_MethodName: Eat
-          m_Mode: 3
+        - m_Target: {fileID: 114659071988546570}
+          m_MethodName: CheckEatingRanch
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
