@@ -62,9 +62,10 @@ public class ActionsManager : MonoBehaviour
     else
     {
       actionsMadeByPlayerOnCurrentStage.SecondAction = smartObject;
+      OnPlayerPerformedAction ();
+
       actionsMadeByPlayerOnPreviousStages.Add (actionsMadeByPlayerOnCurrentStage);
       actionsMadeByPlayerOnCurrentStage = new Stage ();
-      OnPlayerPerformedAction ();
       OnStageFinished (ActionsMadeByPlayerOnLastStage);
     }
   }
