@@ -5,8 +5,8 @@ public class SmartObjectHUDManager : MonoBehaviour
 {
   private void Start ()
   {
-    SmartObject.OnPlayerInteraction += OnPlayerInteractedWithSmartObject;
     ActionsManager.OnStageFinished += OnStageFinished;
+    stageFinishedTweener.SetOnFinishedCallback (UpdateSmartObjectInfo);
     remainUsesAmount = target.CurrentUsage;
     foreach (BaseTweener tweener in usesModifiedTweeners)
     {
@@ -15,17 +15,17 @@ public class SmartObjectHUDManager : MonoBehaviour
     UpdateHUD ();
   }
 
-  private void OnPlayerInteractedWithSmartObject (SmartObject smartObject)
+  private void UpdateSmartObjectInfo ()
   {
-    if (smartObject == target && smartObject.CurrentUsage != remainUsesAmount)
+    if (target.CurrentUsage != remainUsesAmount)
     {
-      modifiedUsesLabel.text = (smartObject.CurrentUsage - remainUsesAmount).ToString("+#;-#;0");
-      modifiedUsesLabel.color = (remainUsesAmount > smartObject.CurrentUsage) ? removedUsesColor : addedUsesColor;
+      modifiedUsesLabel.text = (target.CurrentUsage - remainUsesAmount).ToString("+#;-#;0");
+      modifiedUsesLabel.color = (remainUsesAmount > target.CurrentUsage) ? removedUsesColor : addedUsesColor;
       foreach(BaseTweener tweener in usesModifiedTweeners)
       {
         tweener.PlayForward ();
       }
-      remainUsesAmount = smartObject.CurrentUsage;
+      remainUsesAmount = target.CurrentUsage;
       UpdateHUD ();
     }
   }
