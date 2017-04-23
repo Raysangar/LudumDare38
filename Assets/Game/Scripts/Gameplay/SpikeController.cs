@@ -13,6 +13,13 @@ public class SpikeController : MonoBehaviour {
 
   private void FixedUpdate ()
   {
+    if (target == player)
+    {
+
+    } else
+    {
+
+    }
     navMeshAgent.destination = player.position;
     bool moving = (player.position - transform.position).sqrMagnitude > distanceThreshold;
     animator.SetBool ("move", moving);
@@ -43,5 +50,6 @@ public class SpikeController : MonoBehaviour {
 
   private NavMeshAgent navMeshAgent;
   private Transform target;
+  private SmartObject playerTarget;
 
 }
