@@ -27,19 +27,19 @@ public class WoodSmartObject : SmartObject
         stage3.SetActive(true);
         break;
       case 1:
-        stage0.SetActive(false);
+        stage0.SetActive(true);
         stage1.SetActive(true);
         stage2.SetActive(true);
         stage3.SetActive(false);
         break;
       case 2:
-        stage0.SetActive(false);
+        stage0.SetActive(true);
         stage1.SetActive(true);
         stage2.SetActive(false);
         stage3.SetActive(false);
         break;
       case 3:
-        stage0.SetActive(false);
+        stage0.SetActive(true);
         stage1.SetActive(false);
         stage2.SetActive(false);
         stage3.SetActive(false);
