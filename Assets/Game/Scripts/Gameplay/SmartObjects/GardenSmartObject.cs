@@ -4,6 +4,14 @@ public class GardenSmartObject : SmartObject
 {
   public override void Interact()
   {
+    if (CurrentUsage != -1)
+    {
+      SpendUsage();
+      if (CurrentUsage == 0)
+      {
+        BreakObject();
+      }
+    }
     base.Interact();
     print("Interaction With Garden");
   }
@@ -21,27 +29,27 @@ public class GardenSmartObject : SmartObject
         break;
       case 0:
         stage0.SetActive(true);
-        stage1.SetActive(true);
-        stage2.SetActive(true);
-        stage3.SetActive(true);
+        stage1.SetActive(false);
+        stage2.SetActive(false);
+        stage3.SetActive(false);
         break;
       case 1:
         stage0.SetActive(true);
         stage1.SetActive(true);
-        stage2.SetActive(true);
+        stage2.SetActive(false);
         stage3.SetActive(false);
         break;
       case 2:
         stage0.SetActive(true);
         stage1.SetActive(true);
-        stage2.SetActive(false);
+        stage2.SetActive(true);
         stage3.SetActive(false);
         break;
       case 3:
         stage0.SetActive(true);
-        stage1.SetActive(false);
-        stage2.SetActive(false);
-        stage3.SetActive(false);
+        stage1.SetActive(true);
+        stage2.SetActive(true);
+        stage3.SetActive(true);
         break;
       default:
         stage0.SetActive(false);

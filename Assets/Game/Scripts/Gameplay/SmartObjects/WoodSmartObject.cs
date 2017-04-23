@@ -5,20 +5,15 @@ public class WoodSmartObject : SmartObject
 
   public override void Interact()
   {
+    if (CurrentUsage != -1)
+    {
+      SpendUsage();
+      if (CurrentUsage == 0)
+      {
+        BreakObject();
+      }
+    }
     base.Interact();
-
-    if (CurrentUsage == -1)
-    {
-      return;
-    }
-
-    SpendUsage();
-
-    if (CurrentUsage == 0)
-    {
-      BreakObject();
-    }
-
     print("Interaction With Wood");
   }
 

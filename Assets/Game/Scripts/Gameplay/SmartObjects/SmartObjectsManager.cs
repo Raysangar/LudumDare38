@@ -29,7 +29,10 @@ public class SmartObjectsManager : MonoBehaviour
 
   public void BuildRanch()
   {
-    smartObjectsByType[SmartObject.ObjectType.Ranch].SetMaxUsage();
+    if (smartObjectsByType[SmartObject.ObjectType.Ranch].CurrentUsage == -1)
+    {
+      smartObjectsByType[SmartObject.ObjectType.Ranch].SetMaxUsage();
+    }
   }
 
   public void BuildGarden()
