@@ -12,6 +12,11 @@ public class PointAndClickManager : MonoBehaviour
     SetCustomLayerMask ();
   }
 
+  private void OnDisable ()
+  {
+    disableAllLayersInCullingMask ();
+  }
+
   void Update ()
   {
     Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
