@@ -6,6 +6,7 @@ public class SmartObjectHUDManager : MonoBehaviour
   private void Start ()
   {
     SmartObject.OnPlayerInteraction += OnPlayerInteractedWithSmartObject;
+    ActionsManager.OnStageFinished += OnStageFinished;
     remainUsesAmount = target.CurrentUsage;
     foreach (BaseTweener tweener in usesModifiedTweeners)
     {
@@ -29,6 +30,11 @@ public class SmartObjectHUDManager : MonoBehaviour
     }
   }
 
+  private void OnStageFinished (ActionsManager.Stage stage)
+  {
+    stageFinishedTweener.PlayForward ();
+  }
+
   private void UpdateHUD ()
   {
     usesLabel.text = remainUsesAmount + "/" + target.MaxUsage;
@@ -45,6 +51,9 @@ public class SmartObjectHUDManager : MonoBehaviour
 
   [SerializeField]
   private BaseTweener[] usesModifiedTweeners;
+
+  [SerializeField]
+  private TweenScale stageFinishedTweener;
 
   [SerializeField]
   private Color addedUsesColor = Color.green;
