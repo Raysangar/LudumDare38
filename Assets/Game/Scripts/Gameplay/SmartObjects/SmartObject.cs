@@ -45,6 +45,11 @@ public abstract class SmartObject : MonoBehaviour
     get { return hungerFactor; }
   }
 
+  public GameObject HoldObject
+  {
+    get { return holdObject; }
+  }
+
   public virtual void Interact()
   {
     OnPlayerInteraction(this);
@@ -65,6 +70,11 @@ public abstract class SmartObject : MonoBehaviour
   public virtual void SetGraphicByUsage()
   {
 
+  }
+
+  public virtual void LaunchErrorAction()
+  {
+    Debug.Log("Meeeeec");
   }
 
   private void Awake()
@@ -99,6 +109,10 @@ public abstract class SmartObject : MonoBehaviour
     {
       PlayerManager.Instance.EatAndDrink(-hungerFactor, -thirstFactor);
     }
+    if (holdObject != null)
+    {
+      holdObject.SetActive(false);
+    }
   }
 
   [SerializeField]
@@ -118,6 +132,9 @@ public abstract class SmartObject : MonoBehaviour
 
   [SerializeField]
   private int thirstFactor;
+
+  [SerializeField]
+  private GameObject holdObject;
 
   private int currentUsage = -1;
 }

@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
 
   private void OnStageFinished (ActionsManager.Stage stage)
   {
+    bool anyActionCorrect;
     int i = 0;
     while (i < playerActionsConsequences.Length && !playerActionsConsequences[i].StageMatchesActions(stage))
     {
