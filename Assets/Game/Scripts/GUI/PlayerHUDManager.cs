@@ -23,11 +23,11 @@ public class PlayerHUDManager : MonoBehaviour {
   {
     if (foodAmount != PlayerManager.Instance.CurrentFood)
     {
-      SetDifferenceTextAnimation (foodAmount - PlayerManager.Instance.CurrentFood, foodDifferenceLabel, foodDifferenceTweeners);
+      SetDifferenceTextAnimation (PlayerManager.Instance.CurrentFood - foodAmount, foodDifferenceLabel, foodDifferenceTweeners);
     }
     if (waterAmount != PlayerManager.Instance.CurrentWater)
     {
-      SetDifferenceTextAnimation (waterAmount - PlayerManager.Instance.CurrentWater, waterDifferenceLabel, waterDifferenceTweeners);
+      SetDifferenceTextAnimation (PlayerManager.Instance.CurrentWater - waterAmount, waterDifferenceLabel, waterDifferenceTweeners);
     }
     foodAmount = PlayerManager.Instance.CurrentFood;
     waterAmount = PlayerManager.Instance.CurrentWater;
@@ -37,7 +37,7 @@ public class PlayerHUDManager : MonoBehaviour {
   private void SetDifferenceTextAnimation (int difference, Text text, BaseTweener[] tweeners)
   {
     text.color = (difference < 0) ? negativeDifferenceColor : positiveDifferenceColor;
-    foodDifferenceLabel.text = difference.ToString ("+#;-#;0");
+    text.text = difference.ToString ("+#;-#;0");
     foreach (BaseTweener tweener in tweeners)
     {
       tweener.PlayForward ();
