@@ -5,23 +5,23 @@ using UnityEngine.AI;
 public class SpikeController : MonoBehaviour {
 
 	void Start () {
-    target = player;
     navMeshAgent = GetComponent<NavMeshAgent> ();
     animator.SetBool ("move", false);
     walkParticles.Stop ();
+    PointAndClickManager.OnSmartObjectClicked += OnSmartObjectClicked;
+  }
+
+  private void OnSmartObjectClicked (SmartObject smartObject)
+  {
+    playerTarget = smartObject;
+    FindClosestSeatPositionToPlayerTarget ();
   }
 
   private void FixedUpdate ()
   {
-    if (target == player)
-    {
-
-    } else
-    {
-
-    }
-    navMeshAgent.destination = player.position;
-    bool moving = (player.position - transform.position).sqrMagnitude > distanceThreshold;
+    Vector3 target = (playerTarget != null && player.IsCloseToTarget ()) ? closestSeatPosition.position : player.transform.position;
+    navMeshAgent.destination = target;
+    bool moving = (target - transform.position).sqrMagnitude > distanceThreshold;
     animator.SetBool ("move", moving);
     if (moving)
     {
@@ -33,8 +33,23 @@ public class SpikeController : MonoBehaviour {
     }
   }
 
+  private void FindClosestSeatPositionToPlayerTarget ()
+  {
+    closestSeatPosition = null;
+    float closestDistance = float.MaxValue;
+    foreach (Transform seatPosition in seatPositions)
+    {
+      float distance = Vector3.Distance (seatPosition.position, playerTarget.SmartPosition.position);
+      if (distance < closestDistance)
+      {
+        closestSeatPosition = seatPosition;
+        closestDistance = distance;
+      }
+    }
+  }
+
   [SerializeField]
-  private Transform player;
+  private PlayerMovementController player;
 
   [SerializeField]
   private Animator animator;
@@ -48,8 +63,7 @@ public class SpikeController : MonoBehaviour {
   [SerializeField]
   private Transform[] seatPositions;
 
+  private Transform closestSeatPosition;
   private NavMeshAgent navMeshAgent;
-  private Transform target;
   private SmartObject playerTarget;
-
 }
