@@ -41,16 +41,16 @@
 
 			fixed4 frag (v2f i) : SV_Target
 			{
-				float2 uvcenter = i.uv-float2(0.5,0.5);
+				float2 uvcenter = i.uv-float2(0.5,0.65);
 				float2 uvscaled = uvcenter;
 				uvscaled.y*=_ScreenParams.y/_ScreenParams.x;
 				fixed4 colori = tex2D(_MainTex, i.uv);
 
-				float factor = 0.25; 
+				float factor = 0.18; 
 
 				float2 uvdeform = uvcenter;
 				uvdeform*=(sin(dot(uvdeform,uvdeform)));
-				uvdeform = i.uv+10.0*uvdeform;
+				uvdeform = float2(0.5,0.5)+0.7*(i.uv-float2(0.5,0.5))+1.0*uvdeform;
 				//uvdeform = fmod(uvdeform+100.0,1.0);
 				fixed4 coldeform = tex2D(_MainTex, uvdeform);
 
