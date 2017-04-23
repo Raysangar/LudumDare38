@@ -56,7 +56,10 @@ public class PointAndClickManager : MonoBehaviour
 
   private void disableAllLayersInCullingMask ()
   {
-    cameraOutline.cullingMask = 0;
+    if (cameraOutline != null)
+    {
+      cameraOutline.cullingMask = 0;
+    }
   }
 
   private void SetCustomLayerMask ()

@@ -518,7 +518,7 @@ MonoBehaviour:
   maxUsage: 3
   hungerFactor: 1
   thirstFactor: 1
-  stage0: {fileID: 0}
-  stage1: {fileID: 0}
-  stage2: {fileID: 0}
-  stage3: {fileID: 0}
+  stage0: {fileID: 1632175726940654}
+  stage1: {fileID: 1979300119182138}
+  stage2: {fileID: 1428602905519452}
+  stage3: {fileID: 1630885080345472}
