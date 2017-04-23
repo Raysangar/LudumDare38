@@ -13,6 +13,18 @@ public class ActionsHUDManager : MonoBehaviour {
   private void Awake ()
   {
     ActionsManager.OnPlayerPerformedAction += UpdateHUD;
+    TransitionStageAnimationManager.OnHalfAnimationDone += OnStageFinished;
+  }
+
+  private void Start ()
+  {
+    OnStageFinished ();
+  }
+
+  private void OnStageFinished ()
+  {
+    firstActionTweener.PlayBackwards ();
+    secondActionTweener.PlayBackwards ();
   }
 
   private void UpdateHUD ()

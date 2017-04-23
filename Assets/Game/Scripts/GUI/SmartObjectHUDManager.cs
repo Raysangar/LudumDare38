@@ -6,7 +6,7 @@ public class SmartObjectHUDManager : MonoBehaviour
   private void Start ()
   {
     ActionsManager.OnStageFinished += OnStageFinished;
-    stageFinishedTweener.SetOnFinishedCallback (UpdateSmartObjectInfo);
+    TransitionStageAnimationManager.OnHalfAnimationDone += UpdateSmartObjectInfo;
     remainUsesAmount = target.CurrentUsage;
     foreach (BaseTweener tweener in usesModifiedTweeners)
     {
