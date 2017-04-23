@@ -47,6 +47,10 @@ public class PlayerManager : MonoBehaviour
 	public void Eat (int foodAmount)
 	{
 		currentFood += foodAmount;
+    if (currentFood > maxFood)
+    {
+      currentFood = maxFood;
+    }
 		OnPlayerEat ();
 	}
 
@@ -78,12 +82,6 @@ public class PlayerManager : MonoBehaviour
 		instance = this;
 		currentFood = maxFood;
 		currentWater = maxWater;
-	}
-
-	void OnGUI ()
-	{
-		GUI.Label (new Rect (10, 10, 100, 20), "Food " + currentFood);
-		GUI.Label (new Rect (10, 30, 100, 20), "Water " + currentWater);
 	}
 
 	[SerializeField]

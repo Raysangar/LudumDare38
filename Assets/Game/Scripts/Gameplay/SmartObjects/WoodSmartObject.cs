@@ -2,6 +2,11 @@
 
 public class WoodSmartObject : SmartObject
 {
+  protected override void Awake()
+  {
+    SetMaxUsage();
+    base.Awake();
+  }
 
   public override void Interact()
   {
@@ -48,6 +53,12 @@ public class WoodSmartObject : SmartObject
         stage3.SetActive(false);
         break;
       case 3:
+        stage0.SetActive(true);
+        stage1.SetActive(true);
+        stage2.SetActive(true);
+        stage3.SetActive(true);
+        break;
+      case 4:
         stage0.SetActive(true);
         stage1.SetActive(true);
         stage2.SetActive(true);

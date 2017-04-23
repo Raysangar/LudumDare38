@@ -401,6 +401,6 @@ MonoBehaviour:
   meshTransform: {fileID: 4094004976616650}
   maxUsage: 0
   hungerFactor: 0
-  thirstFactor: 1
+  thirstFactor: 0
   holdObject: {fileID: 0}
-  waterAmount: 0
+  foodAmount: 2

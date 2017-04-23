@@ -2023,15 +2023,15 @@ MonoBehaviour:
   smartPosition: {fileID: 4607449740181534}
   type: 4
   meshTransform: {fileID: 4298858069725802}
-  maxUsage: 3
-  hungerFactor: 2
-  thirstFactor: 1
+  maxUsage: 2
+  hungerFactor: 0
+  thirstFactor: 0
   holdObject: {fileID: 0}
   stage0: {fileID: 1519751318599664}
   stage1: {fileID: 1426674786199448}
   stage2: {fileID: 1325726093930336}
   stage3: {fileID: 1547087474365232}
-  foodAmount: 0
+  foodAmount: 4
 --- !u!114 &114749772671308812
 MonoBehaviour:
   m_ObjectHideFlags: 1

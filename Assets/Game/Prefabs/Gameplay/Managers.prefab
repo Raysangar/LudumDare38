@@ -230,7 +230,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 114659071988546570}
-          m_MethodName: CheckDrinkin
+          m_MethodName: CheckEatingWater
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc777e97b749e7947878fa3a87e02ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFood: 100
-  maxWater: 100
+  maxFood: 4
+  maxWater: 1
   foodLostEveryStage: 1
-  waterLostEveryStage: 1
+  waterLostEveryStage: 0
