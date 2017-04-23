@@ -12,6 +12,10 @@ public class MonumentSmartObject : SmartObject
   public void IncreaseLevel()
   {
     level++;
+    if (level == MaxUsage)
+    {
+      Debug.Log("You win!");
+    }
   }
 
   public override void SetGraphicByUsage()

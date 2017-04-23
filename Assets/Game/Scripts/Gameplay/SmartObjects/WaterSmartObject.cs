@@ -2,11 +2,11 @@
 
 public class WaterSmartObject : SmartObject
 {
-  public int WaterAmount
+  public int FoodAmount
   {
     get
     {
-      return waterAmount;
+      return foodAmount;
     }
   }
 
@@ -18,5 +18,5 @@ public class WaterSmartObject : SmartObject
   }
 
   [SerializeField]
-  private int waterAmount;
+  private int foodAmount;
 }

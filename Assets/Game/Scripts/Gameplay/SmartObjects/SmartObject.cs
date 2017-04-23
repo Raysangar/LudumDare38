@@ -57,14 +57,7 @@ public abstract class SmartObject : MonoBehaviour
 
   public virtual void AddUsage()
   {
-    if (currentUsage == -1)
-    {
-      return;
-    }
-    else
-    {
-      SetMaxUsage();
-    }
+    currentUsage++;
   }
 
   public virtual void SetGraphicByUsage()
@@ -77,7 +70,7 @@ public abstract class SmartObject : MonoBehaviour
     Debug.Log("Meeeeec");
   }
 
-  private void Awake()
+  protected virtual void Awake()
   {
     ActionsManager.OnStageFinished += OnStageFinished;
     TransitionStageAnimationManager.OnHalfAnimationDone += OnHalfAnimationDone;
@@ -91,7 +84,7 @@ public abstract class SmartObject : MonoBehaviour
 
   public void SetMaxUsage()
   {
-    currentUsage = 3;
+    currentUsage = maxUsage;
   }
 
   public void BreakObject()

@@ -48,13 +48,12 @@ public class SmartObjectsManager : MonoBehaviour
 		}
 	}
 
-	public void CheckDrinkin ()
+	public void CheckEatingWater ()
 	{
 		if (((HouseSmartObject)smartObjectsByType [SmartObject.ObjectType.House]).Level > 0) {
-			PlayerManager.Instance.Drink (((WaterSmartObject)smartObjectsByType [SmartObject.ObjectType.Water]).WaterAmount);
+			PlayerManager.Instance.Eat (((WaterSmartObject)smartObjectsByType [SmartObject.ObjectType.Water]).FoodAmount);
 			((HouseSmartObject)smartObjectsByType [SmartObject.ObjectType.House]).DecreaseLevel ();
 		}
-
 	}
 
 	public void UpgradeHouse ()
@@ -67,7 +66,7 @@ public class SmartObjectsManager : MonoBehaviour
 
 	public void AddUsagesToRanch ()
 	{
-		if (smartObjectsByType [SmartObject.ObjectType.Ranch].CurrentUsage != -1) {
+		if (smartObjectsByType [SmartObject.ObjectType.Ranch].CurrentUsage != -1 && smartObjectsByType[SmartObject.ObjectType.Garden].HoldObject.activeInHierarchy) {
 			smartObjectsByType [SmartObject.ObjectType.Ranch].SetMaxUsage ();
 		} else {
 			smartObjectsByType [SmartObject.ObjectType.Ranch].LaunchErrorAction ();
@@ -83,7 +82,7 @@ public class SmartObjectsManager : MonoBehaviour
 	public void BuildRanch ()
 	{
 		if (smartObjectsByType [SmartObject.ObjectType.Ranch].CurrentUsage == -1) {
-			smartObjectsByType [SmartObject.ObjectType.Ranch].SetMaxUsage ();
+			smartObjectsByType [SmartObject.ObjectType.Ranch].AddUsage();
 			OnPlayerBuildRanch ();
 		} else {
 			smartObjectsByType [SmartObject.ObjectType.Ranch].LaunchErrorAction ();

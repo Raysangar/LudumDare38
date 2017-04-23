@@ -1328,14 +1328,14 @@ MonoBehaviour:
   type: 3
   meshTransform: {fileID: 4909785792595050}
   maxUsage: 3
-  hungerFactor: 1
-  thirstFactor: 1
+  hungerFactor: 0
+  thirstFactor: 0
   holdObject: {fileID: 0}
   stage0: {fileID: 1225391346053902}
   stage1: {fileID: 1631899262915922}
   stage2: {fileID: 1232716666137940}
   stage3: {fileID: 1166887806479894}
-  foodAmount: 0
+  foodAmount: 3
 --- !u!114 &114399256569412934
 MonoBehaviour:
   m_ObjectHideFlags: 1

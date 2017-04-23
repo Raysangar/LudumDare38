@@ -516,8 +516,8 @@ MonoBehaviour:
   type: 2
   meshTransform: {fileID: 4091798724437498}
   maxUsage: 3
-  hungerFactor: 1
-  thirstFactor: 1
+  hungerFactor: 0
+  thirstFactor: 0
   holdObject: {fileID: 0}
   stage0: {fileID: 1632175726940654}
   stage1: {fileID: 1979300119182138}

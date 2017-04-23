@@ -13,7 +13,7 @@ public class RanchSmartObject : SmartObject
 
   public override void Interact()
   {
-    if (CurrentUsage != -1)
+    if (CurrentUsage > 0)
     {
       HoldObject.SetActive(true);
       SpendUsage();
