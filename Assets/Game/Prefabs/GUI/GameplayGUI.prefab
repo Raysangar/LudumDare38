@@ -1501,8 +1501,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  initialScale: {x: 0, y: 3.192}
-  finalScale: {x: 0.00161, y: 3.194}
+  initialScale: {x: 0, y: 0}
+  finalScale: {x: 0.00161, y: 0.00161}
 --- !u!114 &114155058712878158
 MonoBehaviour:
   m_ObjectHideFlags: 1
