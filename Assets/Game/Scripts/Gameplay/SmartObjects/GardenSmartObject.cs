@@ -6,6 +6,7 @@ public class GardenSmartObject : SmartObject
   {
     if (CurrentUsage != -1)
     {
+      HoldObject.SetActive(true);
       SpendUsage();
       if (CurrentUsage == 0)
       {

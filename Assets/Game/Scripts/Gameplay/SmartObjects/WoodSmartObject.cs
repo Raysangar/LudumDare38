@@ -7,6 +7,7 @@ public class WoodSmartObject : SmartObject
   {
     if (CurrentUsage != -1)
     {
+      HoldObject.SetActive(true);
       SpendUsage();
       if (CurrentUsage == 0)
       {

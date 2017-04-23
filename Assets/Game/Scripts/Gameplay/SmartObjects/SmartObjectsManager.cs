@@ -14,9 +14,13 @@ public class SmartObjectsManager : MonoBehaviour
 
   public void UpgradeMonument()
   {
-    if (smartObjectsByType[SmartObject.ObjectType.Wood].CurrentUsage > 0)
+    if (smartObjectsByType[SmartObject.ObjectType.Wood].HoldObject.activeInHierarchy)
     {
       ((MonumentSmartObject)smartObjectsByType[SmartObject.ObjectType.Monument]).IncreaseLevel();
+    }
+    else
+    {
+      ((MonumentSmartObject)smartObjectsByType[SmartObject.ObjectType.Monument]).LaunchErrorAction();
     }
   }
 
@@ -31,6 +35,10 @@ public class SmartObjectsManager : MonoBehaviour
     {
       smartObjectsByType[SmartObject.ObjectType.Ranch].SetMaxUsage();
     }
+    else
+    {
+      smartObjectsByType[SmartObject.ObjectType.Ranch].LaunchErrorAction();
+    }
   }
 
   public void Irrigate()
@@ -43,6 +51,10 @@ public class SmartObjectsManager : MonoBehaviour
     if (smartObjectsByType[SmartObject.ObjectType.Ranch].CurrentUsage == -1)
     {
       smartObjectsByType[SmartObject.ObjectType.Ranch].SetMaxUsage();
+    }
+    else
+    {
+      smartObjectsByType[SmartObject.ObjectType.Ranch].LaunchErrorAction();
     }
   }
 
