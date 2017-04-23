@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4125401381714320}
   m_Layer: 19
-  m_Name: Stage2
+  m_Name: Stage1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4371716970913780}
   m_Layer: 19
-  m_Name: Stage1
+  m_Name: Stage2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ Transform:
   - {fileID: 4379108382862490}
   - {fileID: 4576754422130896}
   m_Father: {fileID: 4625525330716030}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4197766490002950
 Transform:
@@ -507,7 +507,7 @@ Transform:
   - {fileID: 4795577107750332}
   - {fileID: 4706893266787128}
   m_Father: {fileID: 4625525330716030}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4379108382862490
 Transform:
@@ -611,8 +611,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4042927135955550}
-  - {fileID: 4371716970913780}
   - {fileID: 4125401381714320}
+  - {fileID: 4371716970913780}
   m_Father: {fileID: 4776389828371478}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1820,8 +1820,8 @@ MonoBehaviour:
   thirstFactor: 1
   stage0: {fileID: 1030144659774070}
   stage1: {fileID: 1027461660936162}
-  stage2: {fileID: 1798737344612834}
-  stage3: {fileID: 1033021311975578}
+  stage2: {fileID: 1033021311975578}
+  stage3: {fileID: 1798737344612834}
 --- !u!114 &114632866400809604
 MonoBehaviour:
   m_ObjectHideFlags: 1

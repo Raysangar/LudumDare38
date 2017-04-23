@@ -49,9 +49,9 @@ public class HouseSmartObject : SmartObject
         break;
       default:
         stage0.SetActive(false);
-        stage1.SetActive(false);
-        stage2.SetActive(false);
-        stage3.SetActive(false);
+        stage1.SetActive(true);
+        stage2.SetActive(true);
+        stage3.SetActive(true);
         break;
     }
   }

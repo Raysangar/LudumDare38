@@ -48,10 +48,6 @@ public abstract class SmartObject : MonoBehaviour
   public virtual void Interact()
   {
     OnPlayerInteraction(this);
-    if (currentUsage < maxUsage)
-    {
-      currentUsage++;
-    }
   }
 
   public virtual void AddUsage()
@@ -84,7 +80,17 @@ public abstract class SmartObject : MonoBehaviour
 
   public void SetMaxUsage()
   {
-    currentUsage = 0;
+    currentUsage = 3;
+  }
+
+  public void BreakObject()
+  {
+    currentUsage = -1;
+  }
+
+  public void SpendUsage()
+  {
+    currentUsage--;
   }
 
   private void OnStageFinished(ActionsManager.Stage stage)
