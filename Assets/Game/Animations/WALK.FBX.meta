@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: 5b609069b08f660448c0baa2b5c6febb
+timeCreated: 1492942797
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: CAT cabeza
+    100002: CAT cadera
+    100004: CAT ceja der
+    100006: CAT ceja izq
+    100008: CAT ojo derecho inf
+    100010: CAT ojo derecho sup
+    100012: CAT ojo izquierdo inf
+    100014: CAT ojo izquierdo sup
+    100016: CATRigHub003CAPUCHA
+    100018: CATRigLLeg1IZQ
+    100020: CATRigLLeg2IZQ
+    100022: CATRigLLegPlatform
+    100024: CATRigRLeg1DER
+    100026: CATRigRLeg2DER
+    100028: CATRigRLegPlatform
+    100030: CATRigSpine1
+    100032: CATRigSpine1CAPUCHA
+    100034: CATRigSpine2
+    100036: CATRigSpine2CAPUCHA
+    100038: Character001
+    100040: "Mo\xF1eco"
+    100042: //RootNode
+    400000: CAT cabeza
+    400002: CAT cadera
+    400004: CAT ceja der
+    400006: CAT ceja izq
+    400008: CAT ojo derecho inf
+    400010: CAT ojo derecho sup
+    400012: CAT ojo izquierdo inf
+    400014: CAT ojo izquierdo sup
+    400016: CATRigHub003CAPUCHA
+    400018: CATRigLLeg1IZQ
+    400020: CATRigLLeg2IZQ
+    400022: CATRigLLegPlatform
+    400024: CATRigRLeg1DER
+    400026: CATRigRLeg2DER
+    400028: CATRigRLegPlatform
+    400030: CATRigSpine1
+    400032: CATRigSpine1CAPUCHA
+    400034: CATRigSpine2
+    400036: CATRigSpine2CAPUCHA
+    400038: Character001
+    400040: "Mo\xF1eco"
+    400042: //RootNode
+    2300000: CAT ceja der
+    2300002: CAT ceja izq
+    2300004: CAT ojo derecho inf
+    2300006: CAT ojo derecho sup
+    2300008: CAT ojo izquierdo inf
+    2300010: CAT ojo izquierdo sup
+    3300000: CAT ceja der
+    3300002: CAT ceja izq
+    3300004: CAT ojo derecho inf
+    3300006: CAT ojo derecho sup
+    3300008: CAT ojo izquierdo inf
+    3300010: CAT ojo izquierdo sup
+    4300000: "Mo\xF1eco"
+    4300002: CAT ceja izq
+    4300004: CAT ceja der
+    4300006: CAT ojo derecho sup
+    4300008: CAT ojo derecho inf
+    4300010: CAT ojo izquierdo inf
+    4300012: CAT ojo izquierdo sup
+    7400000: Walk
+    9500000: //RootNode
+    13700000: "Mo\xF1eco"
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT cadera
+        weight: 1
+      - path: CAT cadera/CATRigLLeg1IZQ
+        weight: 1
+      - path: CAT cadera/CATRigLLeg1IZQ/CATRigLLeg2IZQ
+        weight: 1
+      - path: CAT cadera/CATRigRLeg1DER
+        weight: 1
+      - path: CAT cadera/CATRigRLeg1DER/CATRigRLeg2DER
+        weight: 1
+      - path: CAT cadera/CATRigSpine1
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza/CAT ceja der
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza/CAT ceja izq
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza/CAT ojo derecho inf
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza/CAT ojo derecho sup
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza/CAT ojo izquierdo inf
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza/CAT ojo izquierdo sup
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza/CATRigSpine1CAPUCHA
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza/CATRigSpine1CAPUCHA/CATRigSpine2CAPUCHA
+        weight: 1
+      - path: CAT cadera/CATRigSpine1/CATRigSpine2/CAT cabeza/CATRigSpine1CAPUCHA/CATRigSpine2CAPUCHA/CATRigHub003CAPUCHA
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      - path: "Mo\xF1eco"
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

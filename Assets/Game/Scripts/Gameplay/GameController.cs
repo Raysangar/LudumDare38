@@ -1,13 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+  public void BackToMainMenu ()
+  {
+    SceneManager.LoadScene (0);
+  }
+
   private void Awake ()
   {
     ActionsManager.OnStageFinished += OnStageFinished;
     PlayerManager.OnPlayerDied += OnPlayerDied;
+  }
+
+  private void Start ()
+  {
+    gameOverTweener.ResetToBeginning ();
+    gameOverTweener.SetOnFinishedCallback (OnGameOverTweenerFinished);
+    continueButton.SetActive (false);
   }
 
   private void OnStageFinished (ActionsManager.Stage stage)
@@ -26,16 +39,34 @@ public class GameController : MonoBehaviour {
 
   private void OnPlayerDied ()
   {
-    print ("Player died");
+    pointAndClick.enabled = false;
     StartCoroutine (GameOver ());
   }
 
   private IEnumerator GameOver ()
   {
-    yield return new WaitForSeconds (5);
-    SceneManager.LoadScene (0);
+    result.text = string.Format ("You survived {0} days", ActionsManager.Instance.ActionsMadeByPlayerOnPreviousStages.Count);
+    yield return new WaitForSeconds (2);
+    gameOverTweener.PlayForward ();
+  }
+
+  private void OnGameOverTweenerFinished ()
+  {
+    continueButton.SetActive (true);
   }
 
   [SerializeField]
   private ActionsConsequence[] playerActionsConsequences;
+
+  [SerializeField]
+  private PointAndClickManager pointAndClick;
+
+  [SerializeField]
+  private Text result;
+
+  [SerializeField]
+  private TweenAlpha gameOverTweener;
+
+  [SerializeField]
+  private GameObject continueButton;
 }

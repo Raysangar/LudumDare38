@@ -200,6 +200,10 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
+  pointAndClick: {fileID: 114637322836635668}
+  result: {fileID: 0}
+  gameOverTweener: {fileID: 0}
+  continueButton: {fileID: 0}
 --- !u!114 &114590619715256618
 MonoBehaviour:
   m_ObjectHideFlags: 1

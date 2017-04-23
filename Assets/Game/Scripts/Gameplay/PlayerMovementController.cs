@@ -9,6 +9,7 @@ public class PlayerMovementController : MonoBehaviour
   {
     navMeshAgent = GetComponent<NavMeshAgent> ();
     PointAndClickManager.OnSmartObjectClicked += OnSmartObjectClicked;
+    animator.SetBool ("move", false);
   }
 
   private void OnSmartObjectClicked (SmartObject smartObject)
@@ -20,6 +21,7 @@ public class PlayerMovementController : MonoBehaviour
 
   private IEnumerator GoInteractWithTarget ()
   {
+    animator.SetBool ("move", true);
     navMeshAgent.destination = target.SmartPosition.position;
 
     yield return new WaitUntil (IsCloseToTarget);
@@ -42,6 +44,7 @@ public class PlayerMovementController : MonoBehaviour
       time += Time.deltaTime;
     }
 
+    animator.SetBool ("move", false);
     target.Interact ();
   }
 
@@ -55,6 +58,9 @@ public class PlayerMovementController : MonoBehaviour
 
   [SerializeField]
   private float distanceThreshold;
+
+  [SerializeField]
+  private Animator animator;
 
   private SmartObject target;
   private NavMeshAgent navMeshAgent;
