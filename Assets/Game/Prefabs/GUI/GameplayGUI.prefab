@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 224633983272865384}
   - component: {fileID: 222655741638436890}
   - component: {fileID: 114774242693990562}
+  - component: {fileID: 114449130600464584}
   m_Layer: 5
   m_Name: FirstAction
   m_TagString: Untagged
@@ -522,6 +523,7 @@ GameObject:
   - component: {fileID: 224557338692415538}
   - component: {fileID: 222679795936272134}
   - component: {fileID: 114165848188779808}
+  - component: {fileID: 114552072249817578}
   m_Layer: 5
   m_Name: SecondAction
   m_TagString: Untagged
@@ -2012,7 +2014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.61764705, g: 0.61764705, b: 0.61764705, a: 0.392}
+  m_Color: {r: 0.5514706, g: 0.5514706, b: 0.5514706, a: 0.54901963}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2081,6 +2083,46 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 11
+--- !u!114 &114449130600464584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1083318439379336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80704bdc751a7fe46a9dceead4adae14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executionType: 0
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  duration: 0.2
+  startTweenerOnEnable: 0
+  onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  executeOnChildren: 0
+  initialColor: {r: 0, g: 0, b: 0, a: 0.54901963}
+  finalColor: {r: 1, g: 1, b: 1, a: 0.19607843}
 --- !u!114 &114452965697103468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2361,6 +2403,46 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114552072249817578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571104101304810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80704bdc751a7fe46a9dceead4adae14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executionType: 0
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  duration: 0.2
+  startTweenerOnEnable: 0
+  onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  executeOnChildren: 0
+  initialColor: {r: 0, g: 0, b: 0, a: 0.54901963}
+  finalColor: {r: 1, g: 1, b: 1, a: 0.19607843}
 --- !u!114 &114559445731639002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3703,10 +3785,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstActionIcon: {fileID: 114621176883390702}
   firstActionTweener: {fileID: 114155058712878158}
-  firstActionBackground: {fileID: 114774242693990562}
+  firstActionTweenColor: {fileID: 114449130600464584}
   secondActionIcon: {fileID: 114079353078744070}
   secondActionTweener: {fileID: 114880634511795604}
-  secondActionBackground: {fileID: 114165848188779808}
+  secondActionTweenColor: {fileID: 114552072249817578}
   actionsHUDInfo:
   - Action: 0
     ActionIcon: {fileID: 21300000, guid: ad43741bbffe08a4c962dbb21777665c, type: 3}
@@ -3720,8 +3802,6 @@ MonoBehaviour:
     ActionIcon: {fileID: 21300000, guid: ad0b4ddc2233eca4eaf8f6da84a0c2e2, type: 3}
   - Action: 5
     ActionIcon: {fileID: 21300000, guid: 933abf9cabb2be84fbfa5dc1d370df59, type: 3}
-  actionPerformedBacground: {r: 1, g: 1, b: 1, a: 0.19607843}
-  pendingActionBackground: {r: 0, g: 0, b: 0, a: 0.54901963}
 --- !u!114 &114955085245638568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3777,7 +3857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0.5514706, g: 0.5514706, b: 0.5514706, a: 0.54901963}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

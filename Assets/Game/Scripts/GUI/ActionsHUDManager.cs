@@ -18,6 +18,8 @@ public class ActionsHUDManager : MonoBehaviour {
 
   private void Start ()
   {
+    firstActionTweenColor.ResetToBeginning ();
+    secondActionTweenColor.ResetToBeginning ();
     UpdateHUD ();
   }
 
@@ -25,29 +27,29 @@ public class ActionsHUDManager : MonoBehaviour {
   {
     firstActionTweener.PlayBackwards ();
     secondActionTweener.PlayBackwards ();
-    firstActionBackground.color = pendingActionBackground;
-    secondActionBackground.color = pendingActionBackground;
+    firstActionTweenColor.PlayBackwards ();
+    secondActionTweenColor.PlayBackwards ();
   }
 
   private void UpdateHUD ()
   {
     ActionsManager.Stage stageActions = ActionsManager.Instance.ActionsMadeByPlayerOnCurrentStage;
-    UpdateAction (firstActionIcon, firstActionBackground, firstActionTweener, stageActions.FirstAction);
-    UpdateAction (secondActionIcon, secondActionBackground, secondActionTweener, stageActions.SecondAction);
+    UpdateAction (firstActionIcon, firstActionTweenColor, firstActionTweener, stageActions.FirstAction);
+    UpdateAction (secondActionIcon, secondActionTweenColor, secondActionTweener, stageActions.SecondAction);
   }
 
-  private void UpdateAction (Image actionIcon, Image actionBackground, TweenScale tweener, SmartObject action)
+  private void UpdateAction (Image actionIcon, TweenColor tweenColor, TweenScale tweener, SmartObject action)
   {
     if (action != null)
     {
       actionIcon.enabled = true;
-      actionBackground.color = actionPerformedBacground;
+      tweenColor.PlayForward ();
       actionIcon.sprite = actionsHUDInfo.Find ((info) => info.Action == action.Type).ActionIcon;
       tweener.PlayForward ();
     }
     else
     {
-      actionBackground.color = pendingActionBackground;
+      tweenColor.ResetToBeginning ();
       actionIcon.enabled = false;
     }
   }
@@ -59,7 +61,7 @@ public class ActionsHUDManager : MonoBehaviour {
   private TweenScale firstActionTweener;
 
   [SerializeField]
-  private Image firstActionBackground;
+  private TweenColor firstActionTweenColor;
 
   [SerializeField]
   private Image secondActionIcon;
@@ -68,14 +70,8 @@ public class ActionsHUDManager : MonoBehaviour {
   private TweenScale secondActionTweener;
 
   [SerializeField]
-  private Image secondActionBackground;
+  private TweenColor secondActionTweenColor;
 
   [SerializeField]
   private ActionHUDInfo[] actionsHUDInfo;
-
-  [SerializeField]
-  private Color actionPerformedBacground;
-
-  [SerializeField]
-  private Color pendingActionBackground;
 }
