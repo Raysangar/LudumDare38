@@ -918,6 +918,9 @@ MonoBehaviour:
   animator: {fileID: 95437466488951314}
   distanceThreshold: 0.5
   walkParticles: {fileID: 198925691120014976}
+  seatPositions:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!137 &137929532939167090
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -82,7 +82,7 @@ public class PlayerMovementController : MonoBehaviour
     target.Interact ();
   }
 
-  private bool IsCloseToTarget ()
+  public bool IsCloseToTarget ()
   {
     return (target.SmartPosition.position - transform.position).sqrMagnitude < distanceThreshold;
   }
