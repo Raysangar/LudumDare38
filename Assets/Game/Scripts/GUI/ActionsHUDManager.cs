@@ -18,30 +18,35 @@ public class ActionsHUDManager : MonoBehaviour {
   private void UpdateHUD ()
   {
     ActionsManager.Stage stageActions = ActionsManager.Instance.ActionsMadeByPlayerOnCurrentStage;
-    UpdateAction (firstAction, firstActionIcon, stageActions.FirstAction);
-    UpdateAction (secondAction, secondActionIcon, stageActions.SecondAction);
+    UpdateAction (firstActionIcon, firstActionTweener, stageActions.FirstAction);
+    UpdateAction (secondActionIcon, secondActionTweener, stageActions.SecondAction);
   }
 
-  private void UpdateAction (GameObject actionHUD, Image actionIcon, SmartObject action)
+  private void UpdateAction (Image actionIcon, TweenScale tweener, SmartObject action)
   {
-    actionHUD.SetActive (action != null);
     if (action != null)
     {
-      firstActionIcon.sprite = actionsHUDInfo.Find ((info) => info.Action == action.Type).ActionIcon;
+      actionIcon.enabled = true;
+      actionIcon.sprite = actionsHUDInfo.Find ((info) => info.Action == action.Type).ActionIcon;
+      tweener.PlayForward ();
+    }
+    else
+    {
+      actionIcon.enabled = false;
     }
   }
-
-  [SerializeField]
-  private GameObject firstAction;
 
   [SerializeField]
   private Image firstActionIcon;
 
   [SerializeField]
-  private GameObject secondAction;
+  private TweenScale firstActionTweener;
 
   [SerializeField]
   private Image secondActionIcon;
+
+  [SerializeField]
+  private TweenScale secondActionTweener;
 
   [SerializeField]
   private ActionHUDInfo[] actionsHUDInfo;
