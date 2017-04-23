@@ -26,24 +26,24 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1121862202277738
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4064443391625940}
   - component: {fileID: 95740839498878260}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: grupo troncos cortados
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
 --- !u!1 &1179460033495464
 GameObject:
   m_ObjectHideFlags: 1
@@ -59,7 +59,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1215035085709778
 GameObject:
@@ -86,12 +86,12 @@ GameObject:
   - component: {fileID: 4631478904928152}
   - component: {fileID: 33240905208812234}
   - component: {fileID: 23027702883772384}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: tronco005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1409025939907814
 GameObject:
@@ -103,12 +103,12 @@ GameObject:
   - component: {fileID: 4981184941678576}
   - component: {fileID: 33139350741795898}
   - component: {fileID: 23837682376791844}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: tronco006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1498010913121172
 GameObject:
@@ -140,8 +140,8 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
 --- !u!1 &1509160334024660
 GameObject:
   m_ObjectHideFlags: 1
@@ -152,12 +152,12 @@ GameObject:
   - component: {fileID: 4716981330383058}
   - component: {fileID: 33788181907861710}
   - component: {fileID: 23747211509743382}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: tronco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1517304325496484
 GameObject:
@@ -174,7 +174,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1539068062707576
 GameObject:
@@ -191,7 +191,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1673861147760798
 GameObject:
@@ -203,12 +203,12 @@ GameObject:
   - component: {fileID: 4261065509155778}
   - component: {fileID: 33747680762606514}
   - component: {fileID: 23943014486180068}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: tronco002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1698030766834946
 GameObject:
@@ -220,12 +220,12 @@ GameObject:
   - component: {fileID: 4507116278095610}
   - component: {fileID: 33673554319138826}
   - component: {fileID: 23530137849709310}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: tronco001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1776823351276114
 GameObject:
@@ -237,12 +237,12 @@ GameObject:
   - component: {fileID: 4022778851606058}
   - component: {fileID: 33242148835408220}
   - component: {fileID: 23183927790701254}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: tronco003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1876331960953866
 GameObject:
@@ -259,7 +259,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1893831678086994
 GameObject:
@@ -276,7 +276,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1913783056906622
 GameObject:
@@ -288,12 +288,12 @@ GameObject:
   - component: {fileID: 4307259907343818}
   - component: {fileID: 33568623536220812}
   - component: {fileID: 23752794018698382}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: tronco004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1915438376420694
 GameObject:
@@ -310,7 +310,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4014493878865556
 Transform:
@@ -345,7 +345,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121862202277738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4716981330383058}
@@ -355,8 +355,8 @@ Transform:
   - {fileID: 4307259907343818}
   - {fileID: 4631478904928152}
   - {fileID: 4981184941678576}
-  m_Father: {fileID: 4866502689705492}
-  m_RootOrder: 7
+  m_Father: {fileID: 4776389828371478}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4261065509155778
 Transform:
@@ -442,13 +442,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1215035085709778}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.78, y: 3.73, z: 0.15}
+  m_LocalRotation: {x: -0, y: -0.98808074, z: -0, w: 0.1539368}
+  m_LocalPosition: {x: -0.96, y: 3.73, z: 0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4776389828371478}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -162.29001, z: 0}
 --- !u!4 &4631478904928152
 Transform:
   m_ObjectHideFlags: 1
@@ -485,6 +485,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4064443391625940}
   - {fileID: 4866502689705492}
   - {fileID: 4607449740181534}
   m_Father: {fileID: 0}
@@ -520,9 +521,8 @@ Transform:
   - {fileID: 4527288605043126}
   - {fileID: 4515819887774128}
   - {fileID: 4265877923378452}
-  - {fileID: 4064443391625940}
   m_Father: {fileID: 4776389828371478}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4910808293471434
 Transform:
@@ -1174,6 +1174,10 @@ MonoBehaviour:
   smartPosition: {fileID: 4607449740181534}
   type: 0
   meshTransform: {fileID: 4866502689705492}
-  maxUsage: 0
+  maxUsage: 3
   hungerFactor: 1
   thirstFactor: 1
+  stage0: {fileID: 1121862202277738}
+  stage1: {fileID: 1504598634892320}
+  stage2: {fileID: 1504598634892320}
+  stage3: {fileID: 1504598634892320}

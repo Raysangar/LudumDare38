@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour {
   private void OnStageFinished (ActionsManager.Stage stage)
   {
     int i = 0;
-    while (i < playerActionsConsequences.Length && playerActionsConsequences[i].StageMatchesActions(stage))
+    while (i < playerActionsConsequences.Length && !playerActionsConsequences[i].StageMatchesActions(stage))
     {
       ++i;
     }
@@ -21,7 +21,6 @@ public class GameController : MonoBehaviour {
     {
       playerActionsConsequences[i].Execute ();
     }
-
     PlayerManager.Instance.StageFinished ();
   }
 

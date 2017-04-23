@@ -51,6 +51,12 @@ public class PlayerManager : MonoBehaviour {
     currentFood += foodAmount;
   }
 
+  public void EatAndDrink(int foodAmount, int waterAmount)
+  {
+    currentFood += foodAmount;
+    currentWater += waterAmount;
+  }
+
   public void StageFinished ()
   {
     currentFood -= foodLostEveryStage;
@@ -70,6 +76,12 @@ public class PlayerManager : MonoBehaviour {
     instance = this;
     currentFood = maxFood;
     currentWater = maxWater;
+  }
+
+  void OnGUI()
+  {
+    GUI.Label(new Rect(10, 10, 100, 20), "Food " + currentFood);
+    GUI.Label(new Rect(10, 30, 100, 20), "Water " + currentWater);
   }
 
   [SerializeField]
