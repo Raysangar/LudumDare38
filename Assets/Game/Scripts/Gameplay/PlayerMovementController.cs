@@ -11,6 +11,7 @@ public class PlayerMovementController : MonoBehaviour
     navMeshAgent.updateRotation = false;
     PointAndClickManager.OnSmartObjectClicked += OnSmartObjectClicked;
     animator.SetBool ("move", false);
+    walkParicles.Stop ();
   }
 
   private void OnSmartObjectClicked (SmartObject smartObject)
@@ -53,6 +54,7 @@ public class PlayerMovementController : MonoBehaviour
       }
 
       navMeshAgent.destination = target.SmartPosition.position;
+      walkParicles.Play ();
 
       yield return new WaitUntil (IsCloseToTarget);
     }
@@ -76,6 +78,7 @@ public class PlayerMovementController : MonoBehaviour
     }
 
     animator.SetBool ("move", false);
+    walkParicles.Stop ();
     target.Interact ();
   }
 
@@ -92,6 +95,9 @@ public class PlayerMovementController : MonoBehaviour
 
   [SerializeField]
   private Animator animator;
+
+  [SerializeField]
+  private ParticleSystem walkParicles;
 
   private SmartObject target;
   private NavMeshAgent navMeshAgent;
