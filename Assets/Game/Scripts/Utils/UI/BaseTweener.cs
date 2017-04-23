@@ -33,6 +33,11 @@ public abstract class BaseTweener : MonoBehaviour
     startTweener ();
   }
 
+  public void ResetToBeginning ()
+  {
+    updateTransform (0);
+  }
+
   public void SetOnFinishedCallback (UnityAction callback)
   {
     onFinished.AddListener (callback);

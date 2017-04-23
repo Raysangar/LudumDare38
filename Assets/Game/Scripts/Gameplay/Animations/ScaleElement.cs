@@ -13,7 +13,7 @@ public class ScaleElement : MonoBehaviour
 	void Start ()
 	{
 		delayTime = Random.Range (0f, 0.3f);
-		time = -delayTime * scaleTime;
+		time = 0f;
 	}
 
 	// Update is called once per frame
@@ -22,8 +22,8 @@ public class ScaleElement : MonoBehaviour
 		transform.localScale = anim.Evaluate (time) * Vector3.one;
 		time += Time.deltaTime;
 
-		if (time > scaleTime - delayTime * scaleTime) {
-			time = -delayTime * scaleTime;
+		if (time > scaleTime) {
+			time = 0f;
 		}
 
 

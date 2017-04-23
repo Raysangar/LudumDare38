@@ -1,32 +1,24 @@
 fileFormatVersion: 2
-guid: 49725d8115f56934a82fcc10afe6a2e7
-timeCreated: 1492881747
+guid: d66bb78a949d94654a00f2fe8d4417f9
+timeCreated: 1492937204
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Object006
-    100004: Object009
-    100006: GRANJA
-    100008: GRANJA VAYA
+    100002: lago
+    100004: roca04
     400000: //RootNode
-    400002: Object006
-    400004: Object009
-    400006: GRANJA
-    400008: GRANJA VAYA
-    2300000: Object006
-    2300002: Object009
-    2300004: GRANJA
-    2300006: GRANJA VAYA
-    3300000: Object006
-    3300002: Object009
-    3300004: GRANJA
-    3300006: GRANJA VAYA
-    4300000: Object006
-    4300002: Object009
-    4300004: GRANJA VAYA
-    4300006: GRANJA
+    400002: lago
+    400004: roca04
+    2300000: //RootNode
+    2300002: lago
+    2300004: roca04
+    3300000: //RootNode
+    3300002: lago
+    3300004: roca04
+    4300000: roca04
+    4300002: lago
     9500000: //RootNode
   materials:
     importMaterials: 1
