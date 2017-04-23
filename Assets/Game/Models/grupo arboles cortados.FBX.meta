@@ -1,32 +1,48 @@
 fileFormatVersion: 2
-guid: 49725d8115f56934a82fcc10afe6a2e7
-timeCreated: 1492881747
+guid: e3ce2e295b4d84657b4c576efd5546eb
+timeCreated: 1492934358
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Object006
-    100004: Object009
-    100006: GRANJA
-    100008: GRANJA VAYA
+    100002: tronco
+    100004: tronco001
+    100006: tronco002
+    100008: tronco003
+    100010: tronco004
+    100012: tronco005
+    100014: tronco006
     400000: //RootNode
-    400002: Object006
-    400004: Object009
-    400006: GRANJA
-    400008: GRANJA VAYA
-    2300000: Object006
-    2300002: Object009
-    2300004: GRANJA
-    2300006: GRANJA VAYA
-    3300000: Object006
-    3300002: Object009
-    3300004: GRANJA
-    3300006: GRANJA VAYA
-    4300000: Object006
-    4300002: Object009
-    4300004: GRANJA VAYA
-    4300006: GRANJA
+    400002: tronco
+    400004: tronco001
+    400006: tronco002
+    400008: tronco003
+    400010: tronco004
+    400012: tronco005
+    400014: tronco006
+    2300000: tronco
+    2300002: tronco001
+    2300004: tronco002
+    2300006: tronco003
+    2300008: tronco004
+    2300010: tronco005
+    2300012: tronco006
+    3300000: tronco
+    3300002: tronco001
+    3300004: tronco002
+    3300006: tronco003
+    3300008: tronco004
+    3300010: tronco005
+    3300012: tronco006
+    4300000: tronco
+    4300002: tronco001
+    4300004: tronco002
+    4300006: tronco003
+    4300008: tronco004
+    4300010: tronco005
+    4300012: tronco006
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1

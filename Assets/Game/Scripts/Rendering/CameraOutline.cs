@@ -8,8 +8,15 @@ public class CameraOutline : MonoBehaviour
 	void Awake ()
 	{
 		_ownCamera = GetComponent<Camera> ();
-		_outlineTexture = new RenderTexture (Screen.width, Screen.height, 0, RenderTextureFormat.ARGB32);
+		_outlineTexture = RenderTexture.GetTemporary (Screen.width, Screen.height, 0, RenderTextureFormat.ARGB32);
+	}
+
+	void Update ()
+	{
+		RenderTexture.ReleaseTemporary (_outlineTexture);
+		_outlineTexture = RenderTexture.GetTemporary (Screen.width, Screen.height, 0, RenderTextureFormat.ARGB32);
 		_ownCamera.targetTexture = _outlineTexture;
+
 	}
 
 
