@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: d8221c4606e0c3b41a38465dd62cde89
+timeCreated: 1492960525
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Object003
+    100004: Object004
+    100006: pieza faro00
+    100008: pieza faro01
+    100010: pieza faro02
+    100012: pieza faro03
+    100014: pieza faro04
+    100016: pieza faro05
+    100018: pieza faro06
+    100020: pieza faro07
+    100022: pieza faro08
+    100024: pieza faro09
+    100026: pieza faro10
+    100028: pieza faro11
+    100030: pieza faro12
+    100032: pieza faro13
+    100034: pieza faro14
+    100036: pieza faro15
+    100038: pieza faro16
+    400000: //RootNode
+    400002: Object003
+    400004: Object004
+    400006: pieza faro00
+    400008: pieza faro01
+    400010: pieza faro02
+    400012: pieza faro03
+    400014: pieza faro04
+    400016: pieza faro05
+    400018: pieza faro06
+    400020: pieza faro07
+    400022: pieza faro08
+    400024: pieza faro09
+    400026: pieza faro10
+    400028: pieza faro11
+    400030: pieza faro12
+    400032: pieza faro13
+    400034: pieza faro14
+    400036: pieza faro15
+    400038: pieza faro16
+    2300000: //RootNode
+    2300002: Object003
+    2300004: Object004
+    2300006: pieza faro00
+    2300008: pieza faro01
+    2300010: pieza faro02
+    2300012: pieza faro03
+    2300014: pieza faro04
+    2300016: pieza faro05
+    2300018: pieza faro06
+    2300020: pieza faro07
+    2300022: pieza faro08
+    2300024: pieza faro09
+    2300026: pieza faro10
+    2300028: pieza faro11
+    2300030: pieza faro12
+    2300032: pieza faro13
+    2300034: pieza faro14
+    2300036: pieza faro15
+    2300038: pieza faro16
+    3300000: //RootNode
+    3300002: Object003
+    3300004: Object004
+    3300006: pieza faro00
+    3300008: pieza faro01
+    3300010: pieza faro02
+    3300012: pieza faro03
+    3300014: pieza faro04
+    3300016: pieza faro05
+    3300018: pieza faro06
+    3300020: pieza faro07
+    3300022: pieza faro08
+    3300024: pieza faro09
+    3300026: pieza faro10
+    3300028: pieza faro11
+    3300030: pieza faro12
+    3300032: pieza faro13
+    3300034: pieza faro14
+    3300036: pieza faro15
+    3300038: pieza faro16
+    4300000: pieza faro17
+    4300002: pieza faro00
+    4300004: Object003
+    4300006: Object004
+    4300008: pieza faro01
+    4300010: pieza faro02
+    4300012: pieza faro03
+    4300014: pieza faro04
+    4300016: pieza faro05
+    4300018: pieza faro06
+    4300020: pieza faro07
+    4300022: pieza faro08
+    4300024: pieza faro09
+    4300026: pieza faro10
+    4300028: pieza faro11
+    4300030: pieza faro12
+    4300032: pieza faro13
+    4300034: pieza faro14
+    4300036: pieza faro15
+    4300038: pieza faro16
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

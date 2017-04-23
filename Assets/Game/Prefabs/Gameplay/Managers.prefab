@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114590619715256618}
   - component: {fileID: 114730560011153994}
   - component: {fileID: 114659071988546570}
+  - component: {fileID: 114020761786305466}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -44,6 +45,155 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114020761786305466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324617552411110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcd879ec8623429697a4d5ac33e2499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleElements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _rotateElement: {fileID: 0}
+  _scaleAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.17385712
+      value: 1.2024999
+      inSlope: -2.7024746
+      outSlope: -2.7024746
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.40506333
+      value: -0.005235553
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.60478204
+      value: -0.005235553
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.8585863
+      value: 1.2025679
+      inSlope: 2.8511882
+      outSlope: 2.8511882
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _rotateAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.5000702
+      value: 0.5001053
+      inSlope: 4.7779055
+      outSlope: 4.7779055
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _timeAnimation: 1.2
+  _turnNumber: 2
 --- !u!114 &114026308217549790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,7 +338,25 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 114659071988546570}
-          m_MethodName: BuildRanch
+          m_MethodName: AddUsagesToRanch
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - firstAction: 0
+    secondAction: 5
+    consequence:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114659071988546570}
+          m_MethodName: UpgradeMonument
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -201,9 +369,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
   pointAndClick: {fileID: 114637322836635668}
-  result: {fileID: 0}
-  gameOverTweener: {fileID: 0}
-  continueButton: {fileID: 0}
 --- !u!114 &114590619715256618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,6 +404,8 @@ MonoBehaviour:
     m_Bits: 262144
   - serializedVersion: 2
     m_Bits: 524288
+  - serializedVersion: 2
+    m_Bits: 8388608
 --- !u!114 &114659071988546570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,6 +423,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114730560011153994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -267,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc777e97b749e7947878fa3a87e02ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFood: 12
-  maxWater: 12
+  maxFood: 100
+  maxWater: 100
   foodLostEveryStage: 1
   waterLostEveryStage: 1

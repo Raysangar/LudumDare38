@@ -7,7 +7,7 @@ public abstract class SmartObject : MonoBehaviour
 
   public enum ObjectType
   {
-    Wood, Water, House, Garden, Ranch
+    Wood, Water, House, Garden, Ranch, Monument
   }
 
   public Transform SmartPosition
