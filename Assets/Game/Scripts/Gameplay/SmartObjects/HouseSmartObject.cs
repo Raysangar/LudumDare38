@@ -7,6 +7,14 @@ public class HouseSmartObject : SmartObject
     get { return level; }
   }
 
+  public override int CurrentUsage
+  {
+    get
+    {
+      return level;
+    }
+  }
+
   public override void Interact()
   {
     base.Interact();
@@ -16,6 +24,15 @@ public class HouseSmartObject : SmartObject
   public void IncreaseLevel()
   {
     level++;
+  }
+
+  public void DecreaseLevel()
+  {
+    level--;
+    if (level < 0)
+    {
+      level = 0;
+    }
   }
 
   public override void SetGraphicByUsage()
@@ -65,6 +82,6 @@ public class HouseSmartObject : SmartObject
   [SerializeField]
   private GameObject stage3;
 
-  private int level;
+  private int level = 0;
 
 }

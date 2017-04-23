@@ -30,7 +30,7 @@ public abstract class SmartObject : MonoBehaviour
     get { return maxUsage; }
   }
 
-  public int CurrentUsage
+  public virtual int CurrentUsage
   {
     get { return currentUsage; }
   }

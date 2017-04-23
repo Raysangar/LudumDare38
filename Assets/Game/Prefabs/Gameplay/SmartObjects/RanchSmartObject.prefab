@@ -556,13 +556,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1215035085709778}
-  m_LocalRotation: {x: 0.52936965, y: 0.46879402, z: 0.46879402, w: 0.52936965}
+  m_LocalRotation: {x: 0.5679535, y: 0.42122298, z: 0.42122298, w: 0.5679535}
   m_LocalPosition: {x: -0.015, y: -1.2600007, z: 4.8600016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4776389828371478}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 83.054, z: 0}
+  m_LocalEulerAnglesHint: {x: 16.875, y: 90.00001, z: 90.00001}
 --- !u!4 &4645183942867274
 Transform:
   m_ObjectHideFlags: 1
@@ -2026,10 +2026,12 @@ MonoBehaviour:
   maxUsage: 3
   hungerFactor: 2
   thirstFactor: 1
+  holdObject: {fileID: 0}
   stage0: {fileID: 1519751318599664}
   stage1: {fileID: 1426674786199448}
   stage2: {fileID: 1325726093930336}
   stage3: {fileID: 1547087474365232}
+  foodAmount: 0
 --- !u!114 &114749772671308812
 MonoBehaviour:
   m_ObjectHideFlags: 1

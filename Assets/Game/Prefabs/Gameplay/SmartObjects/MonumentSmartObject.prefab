@@ -1531,6 +1531,7 @@ MonoBehaviour:
   maxUsage: 0
   hungerFactor: 0
   thirstFactor: 0
+  holdObject: {fileID: 0}
   piecesMonument:
   - {fileID: 1866820097502686}
   - {fileID: 1092980629657380}

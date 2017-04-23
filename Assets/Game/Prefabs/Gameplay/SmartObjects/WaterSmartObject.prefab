@@ -403,3 +403,4 @@ MonoBehaviour:
   hungerFactor: 0
   thirstFactor: 1
   holdObject: {fileID: 0}
+  waterAmount: 0

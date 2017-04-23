@@ -2,6 +2,15 @@
 
 public class RanchSmartObject : SmartObject
 {
+
+  public int FoodAmount
+  {
+    get
+    {
+      return foodAmount;
+    }
+  }
+
   public override void Interact()
   {
     if (CurrentUsage != -1)
@@ -69,4 +78,7 @@ public class RanchSmartObject : SmartObject
   private GameObject stage2;
   [SerializeField]
   private GameObject stage3;
+
+  [SerializeField]
+  private int foodAmount;
 }

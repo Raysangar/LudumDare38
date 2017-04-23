@@ -24,9 +24,40 @@ public class SmartObjectsManager : MonoBehaviour
     }
   }
 
+  public void CheckEatingGarden()
+  {
+    if (((HouseSmartObject)smartObjectsByType[SmartObject.ObjectType.House]).Level > 0)
+    {
+      PlayerManager.Instance.Eat(((GardenSmartObject)smartObjectsByType[SmartObject.ObjectType.Garden]).FoodAmount);
+      ((HouseSmartObject)smartObjectsByType[SmartObject.ObjectType.House]).DecreaseLevel();
+    }
+  }
+
+  public void CheckEatingRanch()
+  {
+    if (((HouseSmartObject)smartObjectsByType[SmartObject.ObjectType.House]).Level > 0)
+    {
+      PlayerManager.Instance.Eat(((RanchSmartObject)smartObjectsByType[SmartObject.ObjectType.Ranch]).FoodAmount);
+      ((HouseSmartObject)smartObjectsByType[SmartObject.ObjectType.House]).DecreaseLevel();
+    }
+  }
+
+  public void CheckDrinkin()
+  {
+    if (((HouseSmartObject)smartObjectsByType[SmartObject.ObjectType.House]).Level > 0)
+    {
+      PlayerManager.Instance.Drink(((WaterSmartObject)smartObjectsByType[SmartObject.ObjectType.Water]).WaterAmount);
+      ((HouseSmartObject)smartObjectsByType[SmartObject.ObjectType.House]).DecreaseLevel();
+    }
+
+  }
+
   public void UpgradeHouse()
   {
-    ((HouseSmartObject)smartObjectsByType[SmartObject.ObjectType.House]).IncreaseLevel();
+    if (smartObjectsByType[SmartObject.ObjectType.Wood].HoldObject.activeInHierarchy)
+    {
+      ((HouseSmartObject)smartObjectsByType[SmartObject.ObjectType.House]).IncreaseLevel();
+    }
   }
 
   public void AddUsagesToRanch()
