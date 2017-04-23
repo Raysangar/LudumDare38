@@ -42,8 +42,8 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 0.37
-      radius: 1.51
+      intensity: 1.53
+      radius: 0.3
       sampleCount: 10
       downsampling: 1
       forceForwardCompatibility: 0
@@ -71,16 +71,16 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 0.56
-      aperture: 3.5
+      focusDistance: 10
+      aperture: 5.6
       focalLength: 50
-      useCameraFov: 1
-      kernelSize: 2
+      useCameraFov: 0
+      kernelSize: 1
   motionBlur:
     m_Enabled: 1
     m_Settings:
-      shutterAngle: 360
-      sampleCount: 4
+      shutterAngle: 270
+      sampleCount: 10
       frameBlending: 0
   eyeAdaptation:
     m_Enabled: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       bloom:
-        intensity: 5.4
+        intensity: 0.5
         threshold: 1.1
         softKnee: 0.5
         radius: 4
@@ -113,30 +113,30 @@ MonoBehaviour:
     m_Settings:
       tonemapping:
         tonemapper: 1
-        neutralBlackIn: 0.02
-        neutralWhiteIn: 10
-        neutralBlackOut: 0
+        neutralBlackIn: -0.01
+        neutralWhiteIn: 16.6
+        neutralBlackOut: 0.06
         neutralWhiteOut: 10
-        neutralWhiteLevel: 5.3
-        neutralWhiteClip: 10
+        neutralWhiteLevel: 20
+        neutralWhiteClip: 6.3
       basic:
-        postExposure: 0.84
-        temperature: 10
-        tint: -5
-        hueShift: 8
-        saturation: 1.1
-        contrast: 1.02
+        postExposure: 1.7
+        temperature: -13
+        tint: 0
+        hueShift: 0
+        saturation: 1.03
+        contrast: 0.74
       channelMixer:
-        red: {x: 0.72, y: 0.23, z: 0.32}
+        red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 1, b: 1, a: 0}
-          power: {r: 1, g: 1, b: 1, a: 0}
-          offset: {r: 1, g: 1, b: 1, a: 0}
+          slope: {r: 1, g: 1, b: 1, a: 0.15384616}
+          power: {r: 1, g: 1, b: 1, a: 0.3846154}
+          offset: {r: 1, g: 0.8754634, b: 0.5462796, a: -0.03846154}
         linear:
           lift: {r: 0, g: 0, b: 0, a: 0}
           gamma: {r: 0, g: 0, b: 0, a: 0}
@@ -284,7 +284,7 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 1
+      intensity: 0.1
   grain:
     m_Enabled: 0
     m_Settings:
@@ -299,8 +299,8 @@ MonoBehaviour:
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
       intensity: 0.45
-      smoothness: 0.2
-      roundness: 1
+      smoothness: 0.19
+      roundness: 0.8
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
