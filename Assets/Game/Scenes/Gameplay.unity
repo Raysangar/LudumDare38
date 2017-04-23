@@ -861,11 +861,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114688443615465830, guid: 828a524f222167b45988801ccd18afbe,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
       propertyPath: m_LocalPosition.x
       value: -7.9414206
@@ -943,32 +938,17 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1467334473}
-    - target: {fileID: 114688443615465830, guid: 828a524f222167b45988801ccd18afbe,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114688443615465830, guid: 828a524f222167b45988801ccd18afbe,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114688443615465830, guid: 828a524f222167b45988801ccd18afbe,
+    - target: {fileID: 114776783242212442, guid: 828a524f222167b45988801ccd18afbe,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 339230782}
-    - target: {fileID: 114688443615465830, guid: 828a524f222167b45988801ccd18afbe,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMainMenu
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 828a524f222167b45988801ccd18afbe, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &592989821 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1544299602714442, guid: 828a524f222167b45988801ccd18afbe,
+  m_PrefabParentObject: {fileID: 1012730735928946, guid: 828a524f222167b45988801ccd18afbe,
     type: 2}
   m_PrefabInternal: {fileID: 592989820}
 --- !u!114 &592989822 stripped
