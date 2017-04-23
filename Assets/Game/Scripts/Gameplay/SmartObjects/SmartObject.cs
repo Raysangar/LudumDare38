@@ -81,6 +81,7 @@ public abstract class SmartObject : MonoBehaviour
   {
     ActionsManager.OnStageFinished += OnStageFinished;
     TransitionStageAnimationManager.OnHalfAnimationDone += OnHalfAnimationDone;
+    GameController.OnActionErrated += LaunchErrorAction;
   }
 
   void OnHalfAnimationDone()

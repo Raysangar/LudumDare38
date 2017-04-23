@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+  public static System.Action OnActionErrated = delegate { };
+
   private void Awake ()
   {
     ActionsManager.OnStageFinished += OnStageFinished;
@@ -11,7 +13,6 @@ public class GameController : MonoBehaviour {
 
   private void OnStageFinished (ActionsManager.Stage stage)
   {
-    bool anyActionCorrect;
     int i = 0;
     while (i < playerActionsConsequences.Length && !playerActionsConsequences[i].StageMatchesActions(stage))
     {
@@ -19,7 +20,11 @@ public class GameController : MonoBehaviour {
     }
     if (i < playerActionsConsequences.Length)
     {
-      playerActionsConsequences[i].Execute ();
+      playerActionsConsequences[i].Execute();
+    }
+    else
+    {
+      OnActionErrated();
     }
     PlayerManager.Instance.StageFinished ();
   }
