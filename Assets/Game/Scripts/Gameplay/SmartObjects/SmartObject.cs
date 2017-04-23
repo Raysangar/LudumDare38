@@ -74,6 +74,12 @@ public abstract class SmartObject : MonoBehaviour
   private void Awake()
   {
     ActionsManager.OnStageFinished += OnStageFinished;
+    TransitionStageAnimationManager.OnHalfAnimationDone += OnHalfAnimationDone;
+  }
+
+  void OnHalfAnimationDone()
+  {
+    SetGraphicByUsage();
   }
 
   public void SetMaxUsage()

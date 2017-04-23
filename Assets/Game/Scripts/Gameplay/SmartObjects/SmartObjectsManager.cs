@@ -15,31 +15,26 @@ public class SmartObjectsManager : MonoBehaviour
   public void UpgradeHouse()
   {
     ((HouseSmartObject)smartObjectsByType[SmartObject.ObjectType.House]).IncreaseLevel();
-    smartObjectsByType[SmartObject.ObjectType.House].SetGraphicByUsage();
   }
 
   public void AddUsagesToRanch()
   {
     smartObjectsByType[SmartObject.ObjectType.Ranch].AddUsage();
-    smartObjectsByType[SmartObject.ObjectType.Ranch].SetGraphicByUsage();
   }
 
   public void Irrigate()
   {
     smartObjectsByType[SmartObject.ObjectType.Wood].SetMaxUsage();
-    smartObjectsByType[SmartObject.ObjectType.Wood].SetGraphicByUsage();
   }
 
   public void BuildRanch()
   {
     smartObjectsByType[SmartObject.ObjectType.Ranch].SetMaxUsage();
-    smartObjectsByType[SmartObject.ObjectType.Ranch].SetGraphicByUsage();
   }
 
   public void BuildGarden()
   {
     smartObjectsByType[SmartObject.ObjectType.Garden].SetMaxUsage();
-    smartObjectsByType[SmartObject.ObjectType.Garden].SetGraphicByUsage();
   }
 
   [SerializeField]
