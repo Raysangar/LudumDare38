@@ -54,15 +54,15 @@ public abstract class SmartObject : MonoBehaviour
     }
   }
 
-  public virtual void AddUsage(bool needConstruction = false)
+  public virtual void AddUsage()
   {
-    if ((currentUsage == maxUsage || currentUsage == -1) && needConstruction )
+    if (currentUsage == -1)
     {
-      SetMaxUsage();
+      return;
     }
     else
     {
-      currentUsage++;
+      SetMaxUsage();
     }
   }
 

@@ -18,6 +18,12 @@ public class SmartObjectsManager : MonoBehaviour
     smartObjectsByType[SmartObject.ObjectType.House].SetGraphicByUsage();
   }
 
+  public void AddUsagesToRanch()
+  {
+    smartObjectsByType[SmartObject.ObjectType.Ranch].AddUsage();
+    smartObjectsByType[SmartObject.ObjectType.Ranch].SetGraphicByUsage();
+  }
+
   public void Irrigate()
   {
     smartObjectsByType[SmartObject.ObjectType.Wood].SetMaxUsage();
@@ -26,13 +32,13 @@ public class SmartObjectsManager : MonoBehaviour
 
   public void BuildRanch()
   {
-    smartObjectsByType[SmartObject.ObjectType.Ranch].AddUsage(true);
+    smartObjectsByType[SmartObject.ObjectType.Ranch].SetMaxUsage();
     smartObjectsByType[SmartObject.ObjectType.Ranch].SetGraphicByUsage();
   }
 
   public void BuildGarden()
   {
-    smartObjectsByType[SmartObject.ObjectType.Garden].AddUsage();
+    smartObjectsByType[SmartObject.ObjectType.Garden].SetMaxUsage();
     smartObjectsByType[SmartObject.ObjectType.Garden].SetGraphicByUsage();
   }
 
