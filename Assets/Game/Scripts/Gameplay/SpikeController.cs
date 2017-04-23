@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class SpikeController : MonoBehaviour {
 
 	void Start () {
+    target = player;
     navMeshAgent = GetComponent<NavMeshAgent> ();
     animator.SetBool ("move", false);
     walkParticles.Stop ();
@@ -37,6 +38,10 @@ public class SpikeController : MonoBehaviour {
   [SerializeField]
   private ParticleSystem walkParticles;
 
+  [SerializeField]
+  private Transform[] seatPositions;
+
   private NavMeshAgent navMeshAgent;
+  private Transform target;
 
 }
