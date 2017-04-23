@@ -22,31 +22,40 @@ public class PlayerMovementController : MonoBehaviour
 
   private IEnumerator GoInteractWithTarget ()
   {
-    animator.SetBool ("move", true);
+    float time;
+    Quaternion origin;
+    Vector3 direction;
+    float duration;
+    Quaternion targetRotation;
 
-    float time = 0;
-    Quaternion origin = transform.rotation;
-    Vector3 direction = target.SmartPosition.position - transform.position;
-    direction.y = 0;
-    Quaternion targetRotation = Quaternion.LookRotation(direction);
-    if (Quaternion.Angle (origin, targetRotation) > Quaternion.Angle (targetRotation, origin))
+    if (!IsCloseToTarget())
     {
-      Quaternion aux = origin;
-      origin = targetRotation;
-      targetRotation = aux;
+      animator.SetBool ("move", true);
+
+      time = 0;
+      origin = transform.rotation;
+      direction = target.SmartPosition.position - transform.position;
+      direction.y = 0;
+      targetRotation = Quaternion.LookRotation (direction);
+      if (Quaternion.Angle (origin, targetRotation) > Quaternion.Angle (targetRotation, origin))
+      {
+        Quaternion aux = origin;
+        origin = targetRotation;
+        targetRotation = aux;
+      }
+
+      duration = Quaternion.Angle (origin, targetRotation) / angularSpeed;
+      while (time < duration)
+      {
+        transform.rotation = Quaternion.Slerp (origin, targetRotation, Mathf.InverseLerp (0, duration, time));
+        yield return null;
+        time += Time.deltaTime;
+      }
+
+      navMeshAgent.destination = target.SmartPosition.position;
+
+      yield return new WaitUntil (IsCloseToTarget);
     }
-
-    float duration = Quaternion.Angle (origin, targetRotation) / angularSpeed;
-    while (time < duration)
-    {
-      transform.rotation = Quaternion.Slerp (origin, targetRotation, Mathf.InverseLerp (0, duration, time));
-      yield return null;
-      time += Time.deltaTime;
-    }
-
-    navMeshAgent.destination = target.SmartPosition.position;
-
-    yield return new WaitUntil (IsCloseToTarget);
 
     time = 0;
     origin = transform.rotation;
