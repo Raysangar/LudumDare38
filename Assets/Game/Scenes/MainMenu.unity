@@ -16474,6 +16474,7 @@ MonoBehaviour:
   - {fileID: 816778958}
   - {fileID: 2040979839}
   mainMenuCanvasGroup: {fileID: 2032599481}
+  exitButton: {fileID: 1637071264}
 --- !u!4 &1434051052
 Transform:
   m_ObjectHideFlags: 0

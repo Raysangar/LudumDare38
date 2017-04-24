@@ -52,6 +52,10 @@ public class GUIGameplayManager : MonoBehaviour
     continueButton.SetActive (false);
     pausePanel.SetActive (false);
     StartCoroutine (ShowTutorial ());
+
+#if !UNITY_STANDALONE && !UNITY_EDITOR
+    pauseExitButton.SetActive (false);
+#endif
   }
 
   private void OnPlayerDied ()
@@ -114,4 +118,7 @@ public class GUIGameplayManager : MonoBehaviour
 
   [SerializeField]
   private CanvasGroup tutorialCanvasGroup;
+
+  [SerializeField]
+  private GameObject pauseExitButton;
 }
