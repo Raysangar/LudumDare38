@@ -52,6 +52,7 @@ public class AudioManager : MonoBehaviour
 		SmartObjectsManager.OnPlayerIrrigate += OnPlayerIrrigate;
 		SmartObjectsManager.OnPlayerBuildRanch += OnPlayerBuildRanch;
 		SmartObjectsManager.OnPlayerBuildGarden += OnPlayerBuildGarden;
+    ActionsManager.OnStageFinished += OnStageFinished;
 
 
 	}
@@ -116,6 +117,14 @@ public class AudioManager : MonoBehaviour
 			break;
 		}
 	}
+
+  private void OnStageFinished (ActionsManager.Stage stage)
+  {
+    if (GameController.Instance.HasStageFailed(stage))
+    {
+      PlaySound (AudioType.Wrong);
+    }
+  }
 
 
 	[SerializeField]
