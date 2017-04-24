@@ -148,7 +148,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &32493256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,6 +365,46 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114249567885911142, guid: 14a5d28335fcbec47a9760079366c9ee,
+        type: 2}
+      propertyPath: maxDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785946072014210, guid: 14a5d28335fcbec47a9760079366c9ee,
+        type: 2}
+      propertyPath: maxDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114447115457838092, guid: 14a5d28335fcbec47a9760079366c9ee,
+        type: 2}
+      propertyPath: maxDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089704750708256, guid: 14a5d28335fcbec47a9760079366c9ee,
+        type: 2}
+      propertyPath: maxDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114406506920043946, guid: 14a5d28335fcbec47a9760079366c9ee,
+        type: 2}
+      propertyPath: maxDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114360317247483928, guid: 14a5d28335fcbec47a9760079366c9ee,
+        type: 2}
+      propertyPath: maxDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114984347789305658, guid: 14a5d28335fcbec47a9760079366c9ee,
+        type: 2}
+      propertyPath: maxDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089146014220288, guid: 14a5d28335fcbec47a9760079366c9ee,
+        type: 2}
+      propertyPath: maxDelay
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14a5d28335fcbec47a9760079366c9ee, type: 2}
   m_IsPrefabParent: 0
@@ -553,7 +593,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &118969055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,7 +1048,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &258161545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1727,6 +1767,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114730560011153994, guid: 24d6a29f548298944a934db7885de8ba,
+        type: 2}
+      propertyPath: maxFood
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24d6a29f548298944a934db7885de8ba, type: 2}
   m_IsPrefabParent: 0
@@ -1835,7 +1880,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &507513567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1911,7 +1956,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &580209981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,6 +2791,73 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 534059f7f6a0cae498c4d708ef3c6b33, type: 3}
   m_PrefabInternal: {fileID: 605360929}
+--- !u!1001 &620627680
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4539823900672224, guid: 84383c031adea41bea5b9baf1eeb8f3e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539823900672224, guid: 84383c031adea41bea5b9baf1eeb8f3e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539823900672224, guid: 84383c031adea41bea5b9baf1eeb8f3e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539823900672224, guid: 84383c031adea41bea5b9baf1eeb8f3e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.77195185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539823900672224, guid: 84383c031adea41bea5b9baf1eeb8f3e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.025384974
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539823900672224, guid: 84383c031adea41bea5b9baf1eeb8f3e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.030897293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539823900672224, guid: 84383c031adea41bea5b9baf1eeb8f3e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.6344221
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539823900672224, guid: 84383c031adea41bea5b9baf1eeb8f3e, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 198919661607103264, guid: 84383c031adea41bea5b9baf1eeb8f3e,
+        type: 2}
+      propertyPath: ShapeModule.type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198919661607103264, guid: 84383c031adea41bea5b9baf1eeb8f3e,
+        type: 2}
+      propertyPath: randomSeed
+      value: -101218876
+      objectReference: {fileID: 0}
+    - target: {fileID: 198919661607103264, guid: 84383c031adea41bea5b9baf1eeb8f3e,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198919661607103264, guid: 84383c031adea41bea5b9baf1eeb8f3e,
+        type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 198919661607103264, guid: 84383c031adea41bea5b9baf1eeb8f3e,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 84383c031adea41bea5b9baf1eeb8f3e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &623962225 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114974229279545712, guid: f8e019b99e9b4114785fa004b10d16dc,
@@ -3267,7 +3379,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &1016958310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3486,7 +3598,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &1129085572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3643,7 +3755,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &1140587999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3937,7 +4049,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &1351218980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4120,7 +4232,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &1429561766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4208,7 +4320,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &1505910660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4289,7 +4401,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &1548951396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4365,7 +4477,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &1598378394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4802,7 +4914,7 @@ MonoBehaviour:
   maxRotationY: 0
   maxRotationZ: 0
   speed: 0.7
-  maxDelay: 0.5
+  maxDelay: 5
 --- !u!114 &2057627837
 MonoBehaviour:
   m_ObjectHideFlags: 0

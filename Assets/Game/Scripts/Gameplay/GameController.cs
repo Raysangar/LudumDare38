@@ -2,7 +2,7 @@
 
 public class GameController : MonoBehaviour {
 
-  public static System.Action OnActionErrated = delegate { };
+  public static System.Action<SmartObject.ObjectType> OnActionErrated = delegate { };
 
   public static GameController Instance
   {
@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour {
     }
     else
     {
-      OnActionErrated();
+      OnActionErrated(stage.FirstAction.Type);
     }
     PlayerManager.Instance.StageFinished ();
   }
