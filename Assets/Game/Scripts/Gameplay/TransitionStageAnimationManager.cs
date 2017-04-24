@@ -16,11 +16,15 @@ public class TransitionStageAnimationManager : MonoBehaviour
 
 	void Start ()
 	{
-		ActionsManager.OnStageFinished -= OnStageFinished;
 		ActionsManager.OnStageFinished += OnStageFinished;
 	}
 
-	void Update ()
+  private void OnDestroy ()
+  {
+		ActionsManager.OnStageFinished -= OnStageFinished;
+  }
+
+  void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			StopCoroutine (AnimationCoroutine ());

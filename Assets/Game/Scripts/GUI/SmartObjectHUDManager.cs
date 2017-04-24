@@ -19,6 +19,11 @@ public class SmartObjectHUDManager : MonoBehaviour
     }
   }
 
+  private void OnDestroy ()
+  {
+    ActionsManager.OnStageFinished -= OnStageFinished;
+  }
+
   private void UpdateSmartObjectInfo ()
   {
     if (target.CurrentUsage != remainUsesAmount)

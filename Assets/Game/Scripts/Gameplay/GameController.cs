@@ -36,6 +36,14 @@ public class GameController : MonoBehaviour {
     GUIGameplayManager.OnResume += ResumeGameplay;
   }
 
+  private void OnDestroy ()
+  {
+    ActionsManager.OnStageFinished -= OnStageFinished;
+    PlayerManager.OnPlayerDied -= PauseGameplay;
+    GUIGameplayManager.OnPause -= PauseGameplay;
+    GUIGameplayManager.OnResume -= ResumeGameplay;
+  }
+
   private void OnStageFinished (ActionsManager.Stage stage)
   {
     int i = 0;

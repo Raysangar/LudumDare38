@@ -43,8 +43,9 @@ public class AudioManager : MonoBehaviour
 		SmartObjectsManager.OnPlayerIrrigate -= OnPlayerIrrigate;
 		SmartObjectsManager.OnPlayerBuildRanch -= OnPlayerBuildRanch;
 		SmartObjectsManager.OnPlayerBuildGarden -= OnPlayerBuildGarden;
+    ActionsManager.OnStageFinished -= OnStageFinished;
 
-		PlayerManager.OnPlayerDrink += OnPlayerDrink;
+    PlayerManager.OnPlayerDrink += OnPlayerDrink;
 		PlayerManager.OnPlayerEat += OnPlayerEat;
 		SmartObject.OnPlayerInteraction += OnPlayerInteraction;
 		SmartObjectsManager.OnPlayerUpgradeMonument += OnPlayerUpgradeMonument;

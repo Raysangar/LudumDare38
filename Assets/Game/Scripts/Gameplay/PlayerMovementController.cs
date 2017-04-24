@@ -14,6 +14,11 @@ public class PlayerMovementController : MonoBehaviour
     walkParicles.Stop ();
   }
 
+  private void OnDestroy ()
+  {
+    PointAndClickManager.OnSmartObjectClicked -= OnSmartObjectClicked;
+  }
+
   private void OnSmartObjectClicked (SmartObject smartObject)
   {
     StopAllCoroutines ();
