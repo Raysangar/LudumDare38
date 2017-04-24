@@ -74,7 +74,7 @@ public abstract class SmartObject : MonoBehaviour
     }
   }
 
-  protected virtual void Awake()
+  public void Start()
   {
     ActionsManager.OnStageFinished += OnStageFinished;
     TransitionStageAnimationManager.OnHalfAnimationDone += OnHalfAnimationDone;

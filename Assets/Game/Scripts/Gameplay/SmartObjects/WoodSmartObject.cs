@@ -2,10 +2,9 @@
 
 public class WoodSmartObject : SmartObject
 {
-  protected override void Awake()
+  public void Awake()
   {
     SetMaxUsage();
-    base.Awake();
   }
 
   public override void Interact()
