@@ -8,6 +8,11 @@ public class GUIGameplayManager : MonoBehaviour
   public static System.Action OnPause = delegate { };
   public static System.Action OnResume = delegate { };
 
+  public static GUIGameplayManager Instance
+  {
+    get { return instance; }
+  }
+
   public void BackToMainMenu ()
   {
     SceneManager.LoadScene (0);
@@ -35,9 +40,18 @@ public class GUIGameplayManager : MonoBehaviour
     StartCoroutine (HideTutorial ());
   }
 
+  public void HideGUI ()
+  {
+    foreach (GameObject gameplayGUI in gameplayGUIElements)
+    {
+      gameplayGUI.SetActive (false);
+    }
+  }
+
   private void Awake ()
   {
     PlayerManager.OnPlayerDied += OnPlayerDied;
+    instance = this;
   }
 
   private void OnDestroy ()
@@ -124,4 +138,9 @@ public class GUIGameplayManager : MonoBehaviour
 
   [SerializeField]
   private GameObject pauseExitButton;
+
+  [SerializeField]
+  private GameObject[] gameplayGUIElements;
+
+  private static GUIGameplayManager instance;
 }
