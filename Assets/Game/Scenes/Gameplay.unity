@@ -4866,11 +4866,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114660685457119184, guid: 828a524f222167b45988801ccd18afbe,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4283760785149814, guid: 828a524f222167b45988801ccd18afbe, type: 2}
       propertyPath: m_LocalPosition.x
       value: -7.9414206
@@ -4953,21 +4948,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1087762882}
-    - target: {fileID: 225059105313459272, guid: 828a524f222167b45988801ccd18afbe,
-        type: 2}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114660685457119184, guid: 828a524f222167b45988801ccd18afbe,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114660685457119184, guid: 828a524f222167b45988801ccd18afbe,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 828a524f222167b45988801ccd18afbe, type: 2}
   m_IsPrefabParent: 0
