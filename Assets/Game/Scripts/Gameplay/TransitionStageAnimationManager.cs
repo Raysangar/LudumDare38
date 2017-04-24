@@ -175,17 +175,19 @@ public class TransitionStageAnimationManager : MonoBehaviour
 	{
     yield return new WaitForSeconds(2.0f);
     float time = 0f;
-		while (time < 3f * _timeAnimation) {
+		while (time < 7f * _timeAnimation) {
 
-			_trailingFinal.cylindricalCoordinate.y = Mathf.Lerp (2.2f, 5.5f, _animationTrailingFinalCurve.Evaluate (time / (3f * _timeAnimation)));
+			_trailingFinal.cylindricalCoordinate.y = Mathf.Lerp (2.2f, 5.5f, _animationTrailingFinalCurve.Evaluate (time / (7f * _timeAnimation)));
 			time += Time.deltaTime;
 			yield return null;
 		}
+    yield return new WaitForSeconds(10.0f);
+    GUIGameplayManager.Instance.BackToMainMenu();
 	}
 
   public void EndGameTransition()
   {
-    GameUI.SetActive(false);
+    GUIGameplayManager.Instance.HideGUI();
     StartCoroutine(FinalAnimationTrailingCoroutine());
     StartCoroutine(FinalAnimationCoroutine());
   }
