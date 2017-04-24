@@ -21,12 +21,17 @@ public class TransitionStageAnimationManager : MonoBehaviour
 
 	void Start ()
 	{
-		ActionsManager.OnStageFinished -= OnStageFinished;
 		ActionsManager.OnStageFinished += OnStageFinished;
     MonumentSmartObject.OnEndGame += EndGameTransition;
 	}
 
-	private void OnStageFinished (ActionsManager.Stage s)
+  private void OnDestroy ()
+  {
+    ActionsManager.OnStageFinished -= OnStageFinished;
+    MonumentSmartObject.OnEndGame -= EndGameTransition;
+  }
+
+  private void OnStageFinished (ActionsManager.Stage s)
 	{
 		StopCoroutine (AnimationCoroutine ());
 		StartCoroutine (AnimationCoroutine ());
