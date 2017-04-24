@@ -20,18 +20,18 @@ public class TransitionStageAnimationManager : MonoBehaviour
 		ActionsManager.OnStageFinished += OnStageFinished;
 	}
 
-	void Update ()
-	{
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			StopCoroutine (AnimationCoroutine ());
-			StartCoroutine (AnimationCoroutine ());
-		}
-	}
-
 	private void OnStageFinished (ActionsManager.Stage s)
 	{
 		StopCoroutine (AnimationCoroutine ());
 		StartCoroutine (AnimationCoroutine ());
+	}
+
+	void Update ()
+	{
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			StartCoroutine (FinalAnimationCoroutine ());
+			StartCoroutine (FinalAnimationTrailingCoroutine ());
+		}
 	}
 
 	private IEnumerator AnimationCoroutine ()
@@ -125,6 +125,73 @@ public class TransitionStageAnimationManager : MonoBehaviour
 		OnAnimationDone ();
 	}
 
+
+	private IEnumerator FinalAnimationCoroutine ()
+	{
+
+		float time = 0f;
+		Vector3 _one = Vector3.one;
+		Quaternion _id = _rotateElement.localRotation;
+		Quaternion _anotherId = Quaternion.identity;
+		Vector3 _aux;
+
+		while (time < _timeAnimation) {
+
+			_aux = _one * _scaleAnimationFinalCurve.Evaluate (time / _timeAnimation);
+			_playerOriginal.localScale = _aux;
+
+			_scaleSkyboxElements [0].localScale = _aux;
+			_aux = _one * (1f - _scaleAnimationFinalCurve.Evaluate (time / _timeAnimation));
+			_scaleSkyboxElements [1].localScale = _aux;
+			_playerFinal.localScale = _aux;
+
+
+			_aux.x = 0f;
+			_aux.y = 0f;
+			_aux.z = 360f * _rotateAnimationFinalCurve.Evaluate (time / _timeAnimation);
+
+			_rotateElement.localRotation = _id;
+			_rotateElement.Rotate (_turnNumber * _aux, Space.Self);
+
+			_skyboxMaterial.SetFloat ("_DayFactor", _factorSkyboxAnimationFinalCurve.Evaluate (time / _timeAnimation));
+
+			_aux.z = 180f * _rotateSkyboxAnimationFinalCurve.Evaluate (time / _timeAnimation);
+			_rotateSkyboxElement.localRotation = _anotherId;
+			_rotateSkyboxElement.Rotate (-_aux, Space.Self);
+
+
+			time += Time.deltaTime;
+			yield return null;
+
+		}
+			
+
+		_scaleSkyboxElements [0].localScale = _one - _one;
+		_aux = _one;
+		_scaleSkyboxElements [1].localScale = _aux;
+
+		_rotateElement.rotation = _id;
+		_rotateSkyboxElement.localRotation = Quaternion.Euler (new Vector3 (0f, 0f, 180f));
+
+		_skyboxMaterial.SetFloat ("_DayFactor", 1f);
+
+	}
+
+
+	private IEnumerator FinalAnimationTrailingCoroutine ()
+	{
+		float time = 0f;
+		while (time < 3f * _timeAnimation) {
+
+			_trailingFinal.cylindricalCoordinate.y = Mathf.Lerp (2.2f, 5.5f, _animationTrailingFinalCurve.Evaluate (time / (3f * _timeAnimation)));
+			time += Time.deltaTime;
+			yield return null;
+		}
+
+	}
+
+
+
 	[SerializeField]
 	private List<Transform> _scaleElements;
 
@@ -137,22 +204,40 @@ public class TransitionStageAnimationManager : MonoBehaviour
 	[SerializeField]
 	private Transform[] _scaleSkyboxElements;
 
+	[Header ("Animation Stage")]
 	[SerializeField]
 	private AnimationCurve _scaleAnimationCurve;
-
 	[SerializeField]
 	private AnimationCurve _rotateAnimationCurve;
-
 	[SerializeField]
 	private AnimationCurve _rotateSkyboxAnimationCurve;
-
 	[SerializeField]
 	private AnimationCurve _factorSkyboxAnimationCurve;
+
+	[Header ("Animation Final")]
+	[SerializeField]
+	private AnimationCurve _scaleAnimationFinalCurve;
+	[SerializeField]
+	private AnimationCurve _rotateSkyboxAnimationFinalCurve;
+	[SerializeField]
+	private AnimationCurve _rotateAnimationFinalCurve;
+	[SerializeField]
+	private AnimationCurve _factorSkyboxAnimationFinalCurve;
+	[SerializeField]
+	private AnimationCurve _animationTrailingFinalCurve;
+
+	[SerializeField]
+	private Transform _playerOriginal;
+	[SerializeField]
+	private Transform _playerFinal;
 
 	[SerializeField]
 	private float _timeAnimation;
 	[SerializeField]
 	private int _turnNumber;
+
+	[SerializeField]
+	private TrailingFinal _trailingFinal;
 
 	[SerializeField]
 	private Material _skyboxMaterial;
