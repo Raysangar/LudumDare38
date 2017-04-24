@@ -1070,7 +1070,6 @@ GameObject:
   m_Component:
   - component: {fileID: 128953273}
   - component: {fileID: 128953275}
-  - component: {fileID: 128953274}
   m_Layer: 8
   m_Name: RanchSmartObject
   m_TagString: Untagged
@@ -1094,30 +1093,6 @@ Transform:
   m_Father: {fileID: 985408576}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &128953274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114117204529700072, guid: 82b5ce48cecbca24a9806634ba9c8543,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128953272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26287f40f20284043be1dfdccaaa77ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smartPosition: {fileID: 1603304745}
-  type: 4
-  meshTransform: {fileID: 268038790}
-  maxUsage: 2
-  hungerFactor: 0
-  thirstFactor: 0
-  holdObject: {fileID: 0}
-  stage0: {fileID: 468174512}
-  stage1: {fileID: 801509206}
-  stage2: {fileID: 225971744}
-  stage3: {fileID: 2110917523}
-  foodAmount: 4
 --- !u!65 &128953275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2144,7 +2119,6 @@ GameObject:
   m_Component:
   - component: {fileID: 168397890}
   - component: {fileID: 168397892}
-  - component: {fileID: 168397891}
   m_Layer: 8
   m_Name: HouseSmartObject
   m_TagString: Untagged
@@ -2168,29 +2142,6 @@ Transform:
   m_Father: {fileID: 985408576}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &168397891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114871609053975502, guid: 82b5ce48cecbca24a9806634ba9c8543,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 168397889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e20cda5d7e0b84ab6760323ac4bced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smartPosition: {fileID: 254098175}
-  type: 2
-  meshTransform: {fileID: 1477773251}
-  maxUsage: 3
-  hungerFactor: 0
-  thirstFactor: 0
-  holdObject: {fileID: 0}
-  stage0: {fileID: 402171615}
-  stage1: {fileID: 825007124}
-  stage2: {fileID: 589281161}
-  stage3: {fileID: 350515962}
 --- !u!65 &168397892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6713,7 +6664,6 @@ GameObject:
   m_Component:
   - component: {fileID: 549562708}
   - component: {fileID: 549562710}
-  - component: {fileID: 549562709}
   m_Layer: 8
   m_Name: GardenSmartObject
   m_TagString: Untagged
@@ -6737,30 +6687,6 @@ Transform:
   m_Father: {fileID: 985408576}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &549562709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114410078043333822, guid: 82b5ce48cecbca24a9806634ba9c8543,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 549562707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 674ecf7ffde746847b6f289dbf9e8ae1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smartPosition: {fileID: 1654706587}
-  type: 3
-  meshTransform: {fileID: 820999864}
-  maxUsage: 3
-  hungerFactor: 0
-  thirstFactor: 0
-  holdObject: {fileID: 0}
-  stage0: {fileID: 1520507798}
-  stage1: {fileID: 1173748279}
-  stage2: {fileID: 1349878566}
-  stage3: {fileID: 1082088813}
-  foodAmount: 3
 --- !u!65 &549562710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7679,7 +7605,6 @@ GameObject:
   m_Component:
   - component: {fileID: 617198930}
   - component: {fileID: 617198932}
-  - component: {fileID: 617198931}
   m_Layer: 8
   m_Name: MonumentSmartObject
   m_TagString: Untagged
@@ -7703,45 +7628,6 @@ Transform:
   m_Father: {fileID: 985408576}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &617198931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114422386714000274, guid: 82b5ce48cecbca24a9806634ba9c8543,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 617198929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b825681ce85b34ea30656920680671, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smartPosition: {fileID: 893093551}
-  type: 5
-  meshTransform: {fileID: 222456367}
-  maxUsage: 0
-  hungerFactor: 0
-  thirstFactor: 0
-  holdObject: {fileID: 0}
-  piecesMonument:
-  - {fileID: 1729386036}
-  - {fileID: 738578095}
-  - {fileID: 27488589}
-  - {fileID: 1749322017}
-  - {fileID: 757385195}
-  - {fileID: 794166358}
-  - {fileID: 895824360}
-  - {fileID: 2040839140}
-  - {fileID: 1924407460}
-  - {fileID: 1835007504}
-  - {fileID: 1906927650}
-  - {fileID: 755926632}
-  - {fileID: 2129404525}
-  - {fileID: 1825696990}
-  - {fileID: 1443066142}
-  - {fileID: 266829936}
-  - {fileID: 277292203}
-  - {fileID: 1943244153}
-  - {fileID: 1041602972}
 --- !u!65 &617198932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12345,7 +12231,6 @@ GameObject:
   m_Component:
   - component: {fileID: 908086884}
   - component: {fileID: 908086886}
-  - component: {fileID: 908086885}
   m_Layer: 8
   m_Name: WaterSmartObject
   m_TagString: Untagged
@@ -12369,26 +12254,6 @@ Transform:
   m_Father: {fileID: 985408576}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &908086885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114811825037938694, guid: 82b5ce48cecbca24a9806634ba9c8543,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 908086883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63fbdcd0b0667b74ba044cb36195720c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smartPosition: {fileID: 618077979}
-  type: 1
-  meshTransform: {fileID: 705936373}
-  maxUsage: 0
-  hungerFactor: 0
-  thirstFactor: 0
-  holdObject: {fileID: 0}
-  foodAmount: 2
 --- !u!65 &908086886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12558,7 +12423,6 @@ GameObject:
   m_Component:
   - component: {fileID: 921009611}
   - component: {fileID: 921009613}
-  - component: {fileID: 921009612}
   m_Layer: 8
   m_Name: WoodSmartObject
   m_TagString: Untagged
@@ -12583,29 +12447,6 @@ Transform:
   m_Father: {fileID: 985408576}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &921009612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114346056585011646, guid: 82b5ce48cecbca24a9806634ba9c8543,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 921009610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146d8c6baa89b864aab9e81987c94516, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smartPosition: {fileID: 1784507850}
-  type: 0
-  meshTransform: {fileID: 639191596}
-  maxUsage: 4
-  hungerFactor: 0
-  thirstFactor: 0
-  holdObject: {fileID: 0}
-  stage0: {fileID: 1756638739}
-  stage1: {fileID: 1899566145}
-  stage2: {fileID: 1702483701}
-  stage3: {fileID: 617230793}
 --- !u!65 &921009613
 BoxCollider:
   m_ObjectHideFlags: 0

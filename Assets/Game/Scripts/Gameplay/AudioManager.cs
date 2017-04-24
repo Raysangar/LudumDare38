@@ -55,7 +55,7 @@ public class AudioManager : MonoBehaviour
 		SmartObjectsManager.OnPlayerBuildRanch += OnPlayerBuildRanch;
 		SmartObjectsManager.OnPlayerBuildGarden += OnPlayerBuildGarden;
 		TransitionStageAnimationManager.OnAnimationStart += OnAnimationStart;
-
+		ActionsManager.OnStageFinished += OnStageFinished;
 	}
 
 	private void PlaySound (AudioType audioType, bool loop = false)
@@ -122,6 +122,13 @@ public class AudioManager : MonoBehaviour
 	private void OnAnimationStart ()
 	{
 		PlaySound (AudioType.Loop);
+	}
+
+	private void OnStageFinished (ActionsManager.Stage stage)
+	{
+		if (GameController.Instance.HasStageFailed (stage)) {
+			PlaySound (AudioType.Wrong);
+		}
 	}
 
 

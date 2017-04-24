@@ -126,6 +126,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _rotateElement: {fileID: 0}
+  _rotateSkyboxElement: {fileID: 0}
+  _scaleSkyboxElements:
+  - {fileID: 0}
+  - {fileID: 0}
   _scaleAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -192,8 +196,58 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  _rotateSkyboxAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.49905202
+      value: 0.498578
+      inSlope: 0.38409585
+      outSlope: 0.38409585
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _factorSkyboxAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: -0.0039603957
+      value: -0.004219409
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.49847996
+      value: 0.9983495
+      inSlope: -0.014765969
+      outSlope: -0.014765969
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1.0019802
+      value: -0.008438718
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 1
+    m_PostInfinity: 1
+    m_RotationOrder: 0
+  _directionalLight: {fileID: 0}
   _timeAnimation: 1.2
-  _turnNumber: 2
+  _turnNumber: 3
+  _skyboxMaterial: {fileID: 2100000, guid: 4daf9ad692dcd4778a59d5ddfb7244ec, type: 2}
 --- !u!114 &114026308217549790
 MonoBehaviour:
   m_ObjectHideFlags: 1

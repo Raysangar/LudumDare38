@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ActionsHUDManager : MonoBehaviour {
+public class ActionsHUDManager : MonoBehaviour
+{
 
   [System.Serializable]
   public class ActionHUDInfo
@@ -13,17 +14,36 @@ public class ActionsHUDManager : MonoBehaviour {
   private void Awake ()
   {
     ActionsManager.OnPlayerPerformedAction += UpdateHUD;
-    TransitionStageAnimationManager.OnHalfAnimationDone += OnStageFinished;
+    TransitionStageAnimationManager.OnHalfAnimationDone += OnStageHalfAnimationDone;
   }
 
   private void Start ()
   {
+    if (actionFailedTweeners.Length > 0)
+    {
+      actionFailedTweeners[0].SetOnFinishedCallback (ResetActions);
+    }
     firstActionTweenColor.ResetToBeginning ();
     secondActionTweenColor.ResetToBeginning ();
     UpdateHUD ();
   }
 
-  private void OnStageFinished ()
+  private void OnStageHalfAnimationDone ()
+  {
+    if (GameController.Instance.LastStageFailed)
+    {
+      foreach (TweenColor tweener in actionFailedTweeners)
+      {
+        tweener.PlayForward ();
+      }
+    }
+    else
+    {
+      ResetActions ();
+    }
+  }
+
+  private void ResetActions ()
   {
     firstActionTweener.PlayBackwards ();
     secondActionTweener.PlayBackwards ();
@@ -71,6 +91,9 @@ public class ActionsHUDManager : MonoBehaviour {
 
   [SerializeField]
   private TweenColor secondActionTweenColor;
+
+  [SerializeField]
+  private TweenColor[] actionFailedTweeners;
 
   [SerializeField]
   private ActionHUDInfo[] actionsHUDInfo;
