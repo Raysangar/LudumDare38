@@ -44,10 +44,14 @@ public class TransitionStageAnimationManager : MonoBehaviour
 		Quaternion _id = _rotateElement.localRotation;
 		Quaternion _anotherId = Quaternion.identity;
 		Vector3 _aux;
+		float oriLightInt = _directionalLight.intensity;
+
 
 		while (time < _timeAnimation / 2f) {
 
+			_directionalLight.intensity = oriLightInt * _scaleAnimationCurve.Evaluate (time / _timeAnimation);
 			_aux = _one * _scaleAnimationCurve.Evaluate (time / _timeAnimation);
+				
 			for (int i = 0; i < _scaleElements.Count; ++i) {
 				_scaleElements [i].localScale = _aux;
 			}
@@ -71,7 +75,6 @@ public class TransitionStageAnimationManager : MonoBehaviour
 			_rotateSkyboxElement.Rotate (-_aux, Space.Self);
 
 
-
 			time += Time.deltaTime;
 			yield return null;
 
@@ -81,6 +84,7 @@ public class TransitionStageAnimationManager : MonoBehaviour
 
 		while (time < _timeAnimation) {
 
+			_directionalLight.intensity = oriLightInt * _scaleAnimationCurve.Evaluate (time / _timeAnimation);
 			_aux = _one * _scaleAnimationCurve.Evaluate (time / _timeAnimation);
 			for (int i = 0; i < _scaleElements.Count; ++i) {
 				_scaleElements [i].localScale = _aux;
@@ -108,6 +112,7 @@ public class TransitionStageAnimationManager : MonoBehaviour
 
 		}
 
+		_directionalLight.intensity = oriLightInt;	
 		for (int i = 0; i < _scaleElements.Count; ++i) {
 			_scaleElements [i].localScale = _one;
 		}
@@ -148,6 +153,9 @@ public class TransitionStageAnimationManager : MonoBehaviour
 
 	[SerializeField]
 	private AnimationCurve _factorSkyboxAnimationCurve;
+
+	[SerializeField]
+	private Light _directionalLight;
 
 	[SerializeField]
 	private float _timeAnimation;

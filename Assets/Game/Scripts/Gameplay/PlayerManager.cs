@@ -47,7 +47,7 @@ public class PlayerManager : MonoBehaviour
 	public void Eat (int foodAmount)
 	{
 		currentFood += foodAmount;
-    if (currentFood > maxFood)
+    if (currentFood > maxFood + 2)
     {
       currentFood = maxFood;
     }
