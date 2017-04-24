@@ -35,6 +35,14 @@ public class GUIGameplayManager : MonoBehaviour
     StartCoroutine (HideTutorial ());
   }
 
+  public void HideGUI ()
+  {
+    foreach (GameObject gameplayGUI in gameplayGUIElements)
+    {
+      gameplayGUI.SetActive (false);
+    }
+  }
+
   private void Awake ()
   {
     PlayerManager.OnPlayerDied += OnPlayerDied;
@@ -124,4 +132,7 @@ public class GUIGameplayManager : MonoBehaviour
 
   [SerializeField]
   private GameObject pauseExitButton;
+
+  [SerializeField]
+  private GameObject[] gameplayGUIElements;
 }
