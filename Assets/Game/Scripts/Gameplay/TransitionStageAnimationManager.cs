@@ -14,6 +14,11 @@ public class TransitionStageAnimationManager : MonoBehaviour
 	public static System.Action OnAnimationDone = delegate {
 	};
 
+	void Awake ()
+	{
+		_skyboxMaterial.SetFloat ("_DayFactor", 0f);
+	}
+
 	void Start ()
 	{
 		ActionsManager.OnStageFinished -= OnStageFinished;
