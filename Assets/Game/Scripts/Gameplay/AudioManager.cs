@@ -26,7 +26,8 @@ public class AudioManager : MonoBehaviour
 		Build,
 		UIButton,
 		Monument,
-		Bark
+		Bark,
+		Loop
 	}
 
 
@@ -43,6 +44,7 @@ public class AudioManager : MonoBehaviour
 		SmartObjectsManager.OnPlayerIrrigate -= OnPlayerIrrigate;
 		SmartObjectsManager.OnPlayerBuildRanch -= OnPlayerBuildRanch;
 		SmartObjectsManager.OnPlayerBuildGarden -= OnPlayerBuildGarden;
+		TransitionStageAnimationManager.OnAnimationStart -= OnAnimationStart;
 
 		PlayerManager.OnPlayerDrink += OnPlayerDrink;
 		PlayerManager.OnPlayerEat += OnPlayerEat;
@@ -52,7 +54,7 @@ public class AudioManager : MonoBehaviour
 		SmartObjectsManager.OnPlayerIrrigate += OnPlayerIrrigate;
 		SmartObjectsManager.OnPlayerBuildRanch += OnPlayerBuildRanch;
 		SmartObjectsManager.OnPlayerBuildGarden += OnPlayerBuildGarden;
-
+		TransitionStageAnimationManager.OnAnimationStart += OnAnimationStart;
 
 	}
 
@@ -115,6 +117,11 @@ public class AudioManager : MonoBehaviour
 			PlaySound (AudioType.TakeWater);
 			break;
 		}
+	}
+
+	private void OnAnimationStart ()
+	{
+		PlaySound (AudioType.Loop);
 	}
 
 
