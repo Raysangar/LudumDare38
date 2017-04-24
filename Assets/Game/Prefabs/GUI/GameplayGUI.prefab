@@ -2953,7 +2953,14 @@ MonoBehaviour:
   pauseButton: {fileID: 114559445731639002}
   tutorialCanvasGroup: {fileID: 225059105313459272}
   pauseExitButton: {fileID: 1544299602714442}
-  gameplayGUIElements: []
+  gameplayGUIElements:
+  - {fileID: 1831899802042930}
+  - {fileID: 1165367934103424}
+  - {fileID: 1810308594786382}
+  - {fileID: 1245417012776496}
+  - {fileID: 1746593622928970}
+  - {fileID: 1055482010437022}
+  - {fileID: 1465393038583752}
 --- !u!114 &114400036962571092
 MonoBehaviour:
   m_ObjectHideFlags: 1
