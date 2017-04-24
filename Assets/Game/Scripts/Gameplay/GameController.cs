@@ -27,6 +27,16 @@ public class GameController : MonoBehaviour {
     return (i == playerActionsConsequences.Length);
   }
 
+  public void PauseGameplay ()
+  {
+    pointAndClick.enabled = false;
+  }
+
+  public void ResumeGameplay ()
+  {
+    pointAndClick.enabled = true;
+  }
+
   private void Awake ()
   {
     instance = this;
@@ -60,16 +70,6 @@ public class GameController : MonoBehaviour {
       OnActionErrated();
     }
     PlayerManager.Instance.StageFinished ();
-  }
-
-  private void PauseGameplay ()
-  {
-    pointAndClick.enabled = false;
-  }
-
-  private void ResumeGameplay ()
-  {
-    pointAndClick.enabled = true;
   }
 
   [SerializeField]
