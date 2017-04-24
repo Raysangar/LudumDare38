@@ -1696,7 +1696,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8ceca98919ee440419ff455c9d6e62e9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -2953,6 +2953,7 @@ MonoBehaviour:
   pauseButton: {fileID: 114559445731639002}
   tutorialCanvasGroup: {fileID: 225059105313459272}
   pauseExitButton: {fileID: 1544299602714442}
+  gameplayGUIElements: []
 --- !u!114 &114400036962571092
 MonoBehaviour:
   m_ObjectHideFlags: 1
