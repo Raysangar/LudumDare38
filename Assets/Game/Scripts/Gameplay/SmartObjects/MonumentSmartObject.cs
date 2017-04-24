@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class MonumentSmartObject : SmartObject
 {
+
+  public static System.Action OnEndGame;
+
   public override void Interact()
   {
     sumByLevel = (piecesMonument.Count + 1) / MaxUsage;
@@ -16,6 +19,7 @@ public class MonumentSmartObject : SmartObject
     if (level >= (piecesMonument.Count + 1))
     {
       level = (piecesMonument.Count + 1);
+      OnEndGame();
       Debug.Log("You win!");
     }
   }

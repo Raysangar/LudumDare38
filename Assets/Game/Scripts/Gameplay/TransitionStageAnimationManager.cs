@@ -18,20 +18,13 @@ public class TransitionStageAnimationManager : MonoBehaviour
 	{
 		ActionsManager.OnStageFinished -= OnStageFinished;
 		ActionsManager.OnStageFinished += OnStageFinished;
+    MonumentSmartObject.OnEndGame += EndGameTransition;
 	}
 
 	private void OnStageFinished (ActionsManager.Stage s)
 	{
 		StopCoroutine (AnimationCoroutine ());
 		StartCoroutine (AnimationCoroutine ());
-	}
-
-	void Update ()
-	{
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			StartCoroutine (FinalAnimationCoroutine ());
-			StartCoroutine (FinalAnimationTrailingCoroutine ());
-		}
 	}
 
 	private IEnumerator AnimationCoroutine ()
@@ -128,7 +121,7 @@ public class TransitionStageAnimationManager : MonoBehaviour
 
 	private IEnumerator FinalAnimationCoroutine ()
 	{
-
+    yield return new WaitForSeconds(2.0f);
 		float time = 0f;
 		Vector3 _one = Vector3.one;
 		Quaternion _id = _rotateElement.localRotation;
@@ -138,7 +131,7 @@ public class TransitionStageAnimationManager : MonoBehaviour
 		while (time < _timeAnimation) {
 
 			_aux = _one * _scaleAnimationFinalCurve.Evaluate (time / _timeAnimation);
-			_playerOriginal.localScale = _aux;
+			_playerOriginal.localScale = 0.2f * _aux;
 
 			_scaleSkyboxElements [0].localScale = _aux;
 			_aux = _one * (1f - _scaleAnimationFinalCurve.Evaluate (time / _timeAnimation));
@@ -180,16 +173,22 @@ public class TransitionStageAnimationManager : MonoBehaviour
 
 	private IEnumerator FinalAnimationTrailingCoroutine ()
 	{
-		float time = 0f;
+    yield return new WaitForSeconds(2.0f);
+    float time = 0f;
 		while (time < 3f * _timeAnimation) {
 
 			_trailingFinal.cylindricalCoordinate.y = Mathf.Lerp (2.2f, 5.5f, _animationTrailingFinalCurve.Evaluate (time / (3f * _timeAnimation)));
 			time += Time.deltaTime;
 			yield return null;
 		}
-
 	}
 
+  public void EndGameTransition()
+  {
+    GameUI.SetActive(false);
+    StartCoroutine(FinalAnimationTrailingCoroutine());
+    StartCoroutine(FinalAnimationCoroutine());
+  }
 
 
 	[SerializeField]
@@ -241,5 +240,8 @@ public class TransitionStageAnimationManager : MonoBehaviour
 
 	[SerializeField]
 	private Material _skyboxMaterial;
+
+  [SerializeField]
+  private GameObject GameUI;
 
 }
