@@ -73,6 +73,8 @@ public class GUIGameplayManager : MonoBehaviour
 
   private IEnumerator ShowTutorial ()
   {
+    tutorialCanvasGroup.interactable = true;
+    tutorialCanvasGroup.blocksRaycasts = true;
     GameController.Instance.PauseGameplay ();
     float time = 0;
     while (time < 1)
@@ -85,7 +87,6 @@ public class GUIGameplayManager : MonoBehaviour
 
   private IEnumerator HideTutorial ()
   {
-    tutorialCanvasGroup.interactable = false;
     float duration = 1;
     while (duration > 0)
     {
@@ -93,6 +94,8 @@ public class GUIGameplayManager : MonoBehaviour
       yield return null;
       duration -= Time.deltaTime;
     }
+    tutorialCanvasGroup.interactable = false;
+    tutorialCanvasGroup.blocksRaycasts = false;
     GameController.Instance.ResumeGameplay ();
   }
 
