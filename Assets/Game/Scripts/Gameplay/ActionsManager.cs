@@ -47,9 +47,15 @@ public class ActionsManager : MonoBehaviour
   private void Awake ()
   {
     instance = this;
+
     actionsMadeByPlayerOnCurrentStage = new Stage ();
     actionsMadeByPlayerOnPreviousStages = new List<Stage> ();
     SmartObject.OnPlayerInteraction += OnPlayerInteractedWithSmartObject;
+  }
+
+  private void OnDestroy ()
+  {
+    SmartObject.OnPlayerInteraction -= OnPlayerInteractedWithSmartObject;
   }
 
   private void OnPlayerInteractedWithSmartObject (SmartObject smartObject)

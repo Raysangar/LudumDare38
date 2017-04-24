@@ -32,8 +32,12 @@ public class GUIGameplayManager : MonoBehaviour
 
   private void Awake ()
   {
-    ActionsManager.OnStageFinished += OnStageFinished;
     PlayerManager.OnPlayerDied += OnPlayerDied;
+  }
+
+  private void OnDestroy ()
+  {
+    PlayerManager.OnPlayerDied -= OnPlayerDied;
   }
 
   private void Start ()
@@ -42,10 +46,6 @@ public class GUIGameplayManager : MonoBehaviour
     gameOverTweener.SetOnFinishedCallback (OnGameOverTweenerFinished);
     continueButton.SetActive (false);
     pausePanel.SetActive (false);
-  }
-
-  private void OnStageFinished (ActionsManager.Stage stage)
-  {
   }
 
   private void OnPlayerDied ()

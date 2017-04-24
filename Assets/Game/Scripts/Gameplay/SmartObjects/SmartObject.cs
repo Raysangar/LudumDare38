@@ -77,6 +77,13 @@ public abstract class SmartObject : MonoBehaviour
     GameController.OnActionErrated += LaunchErrorAction;
   }
 
+  private void OnDestroy ()
+  {
+    ActionsManager.OnStageFinished -= OnStageFinished;
+    TransitionStageAnimationManager.OnHalfAnimationDone -= OnHalfAnimationDone;
+    GameController.OnActionErrated -= LaunchErrorAction;
+  }
+
   void OnHalfAnimationDone()
   {
     SetGraphicByUsage();
