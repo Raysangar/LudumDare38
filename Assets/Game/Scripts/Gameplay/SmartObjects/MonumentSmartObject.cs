@@ -5,15 +5,17 @@ public class MonumentSmartObject : SmartObject
 {
   public override void Interact()
   {
+    sumByLevel = (piecesMonument.Count + 1) / MaxUsage;
     base.Interact();
     print("Monument");
   }
 
   public void IncreaseLevel()
   {
-    level++;
-    if (level == MaxUsage)
+    level += sumByLevel;
+    if (level >= (piecesMonument.Count + 1))
     {
+      level = (piecesMonument.Count + 1);
       Debug.Log("You win!");
     }
   }
@@ -22,12 +24,20 @@ public class MonumentSmartObject : SmartObject
   {
     if (level > -1)
     {
-      piecesMonument[level].SetActive(true);
+      for (int i = 0; i < piecesMonument.Count; i++)
+      {
+        if (i < level)
+        {
+          piecesMonument[i].SetActive(true);
+        }
+      }
     }
   }
 
   [SerializeField]
   private List<GameObject> piecesMonument;
 
-  private int level = -1;
+  private int sumByLevel;
+
+  private int level = 0;
 }

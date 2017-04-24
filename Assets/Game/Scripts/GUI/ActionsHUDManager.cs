@@ -17,6 +17,12 @@ public class ActionsHUDManager : MonoBehaviour
     TransitionStageAnimationManager.OnHalfAnimationDone += OnStageHalfAnimationDone;
   }
 
+  private void OnDestroy ()
+  {
+    ActionsManager.OnPlayerPerformedAction -= UpdateHUD;
+    TransitionStageAnimationManager.OnHalfAnimationDone -= OnStageHalfAnimationDone;
+  }
+
   private void Start ()
   {
     if (actionFailedTweeners.Length > 0)

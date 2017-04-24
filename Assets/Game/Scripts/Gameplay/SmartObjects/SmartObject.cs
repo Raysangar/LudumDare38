@@ -4,6 +4,7 @@
 public abstract class SmartObject : MonoBehaviour
 {
   public static System.Action<SmartObject> OnPlayerInteraction = delegate { };
+  public static System.Action OnPlayerFailedAction = delegate { };
 
   public enum ObjectType
   {
@@ -65,9 +66,12 @@ public abstract class SmartObject : MonoBehaviour
 
   }
 
-  public virtual void LaunchErrorAction()
+  public virtual void LaunchErrorAction(ObjectType type)
   {
-    Debug.Log("Meeeeec");
+    if (this.type == type)
+    {
+      OnPlayerFailedAction();
+    }
   }
 
   protected virtual void Awake()
@@ -75,6 +79,13 @@ public abstract class SmartObject : MonoBehaviour
     ActionsManager.OnStageFinished += OnStageFinished;
     TransitionStageAnimationManager.OnHalfAnimationDone += OnHalfAnimationDone;
     GameController.OnActionErrated += LaunchErrorAction;
+  }
+
+  private void OnDestroy ()
+  {
+    ActionsManager.OnStageFinished -= OnStageFinished;
+    TransitionStageAnimationManager.OnHalfAnimationDone -= OnHalfAnimationDone;
+    GameController.OnActionErrated -= LaunchErrorAction;
   }
 
   void OnHalfAnimationDone()

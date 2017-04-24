@@ -36,6 +36,10 @@ public class MainMenuController : MonoBehaviour
       logoMaterials.AddRange (renderer.sharedMaterials);
     }
     ShowMainMenu ();
+
+#if !UNITY_STANDALONE && !UNITY_EDITOR
+    exitButton.SetActive (false);
+#endif
   }
 
   private void ResetCreditsTweeners ()
@@ -91,6 +95,9 @@ public class MainMenuController : MonoBehaviour
 
   [SerializeField]
   private CanvasGroup mainMenuCanvasGroup;
+
+  [SerializeField]
+  private GameObject exitButton;
 
   private List<Material> logoMaterials;
 }

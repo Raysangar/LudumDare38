@@ -14,6 +14,11 @@ public class PlayerHUDManager : MonoBehaviour {
     }
   }
 
+  private void OnDestroy ()
+  {
+    ActionsManager.OnStageFinished -= OnStageFinished;
+  }
+
   private void OnStageFinished (ActionsManager.Stage stage)
   {
     if (foodAmount != PlayerManager.Instance.CurrentFood)

@@ -11,6 +11,11 @@ public class SpikeController : MonoBehaviour {
     PointAndClickManager.OnSmartObjectClicked += OnSmartObjectClicked;
   }
 
+  private void OnDestroy ()
+  {
+    PointAndClickManager.OnSmartObjectClicked -= OnSmartObjectClicked;
+  }
+
   private void OnSmartObjectClicked (SmartObject smartObject)
   {
     playerTarget = smartObject;

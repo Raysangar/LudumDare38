@@ -2,7 +2,7 @@
 
 public class GameController : MonoBehaviour {
 
-  public static System.Action OnActionErrated = delegate { };
+  public static System.Action<SmartObject.ObjectType> OnActionErrated = delegate { };
 
   public static GameController Instance
   {
@@ -27,6 +27,16 @@ public class GameController : MonoBehaviour {
     return (i == playerActionsConsequences.Length);
   }
 
+  public void PauseGameplay ()
+  {
+    pointAndClick.enabled = false;
+  }
+
+  public void ResumeGameplay ()
+  {
+    pointAndClick.enabled = true;
+  }
+
   private void Awake ()
   {
     instance = this;
@@ -34,6 +44,14 @@ public class GameController : MonoBehaviour {
     PlayerManager.OnPlayerDied += PauseGameplay;
     GUIGameplayManager.OnPause += PauseGameplay;
     GUIGameplayManager.OnResume += ResumeGameplay;
+  }
+
+  private void OnDestroy ()
+  {
+    ActionsManager.OnStageFinished -= OnStageFinished;
+    PlayerManager.OnPlayerDied -= PauseGameplay;
+    GUIGameplayManager.OnPause -= PauseGameplay;
+    GUIGameplayManager.OnResume -= ResumeGameplay;
   }
 
   private void OnStageFinished (ActionsManager.Stage stage)
@@ -49,19 +67,9 @@ public class GameController : MonoBehaviour {
     }
     else
     {
-      OnActionErrated();
+      OnActionErrated(stage.FirstAction.Type);
     }
     PlayerManager.Instance.StageFinished ();
-  }
-
-  private void PauseGameplay ()
-  {
-    pointAndClick.enabled = false;
-  }
-
-  private void ResumeGameplay ()
-  {
-    pointAndClick.enabled = true;
   }
 
   [SerializeField]

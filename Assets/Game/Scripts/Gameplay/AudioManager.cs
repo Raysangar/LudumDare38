@@ -44,12 +44,14 @@ public class AudioManager : MonoBehaviour
 		SmartObjectsManager.OnPlayerIrrigate -= OnPlayerIrrigate;
 		SmartObjectsManager.OnPlayerBuildRanch -= OnPlayerBuildRanch;
 		SmartObjectsManager.OnPlayerBuildGarden -= OnPlayerBuildGarden;
+    ActionsManager.OnStageFinished -= OnStageFinished;
 		TransitionStageAnimationManager.OnAnimationStart -= OnAnimationStart;
 
-		PlayerManager.OnPlayerDrink += OnPlayerDrink;
+    PlayerManager.OnPlayerDrink += OnPlayerDrink;
 		PlayerManager.OnPlayerEat += OnPlayerEat;
 		SmartObject.OnPlayerInteraction += OnPlayerInteraction;
-		SmartObjectsManager.OnPlayerUpgradeMonument += OnPlayerUpgradeMonument;
+    SmartObject.OnPlayerFailedAction += OnPlayerFailedAction;
+    SmartObjectsManager.OnPlayerUpgradeMonument += OnPlayerUpgradeMonument;
 		SmartObjectsManager.OnPlayerUpgradeHouse += OnPlayerUpgradeHouse;
 		SmartObjectsManager.OnPlayerIrrigate += OnPlayerIrrigate;
 		SmartObjectsManager.OnPlayerBuildRanch += OnPlayerBuildRanch;
@@ -93,7 +95,7 @@ public class AudioManager : MonoBehaviour
 
 	private void OnPlayerBuildGarden ()
 	{
-		PlaySound (AudioType.Build);
+		PlaySound (AudioType.Orchard);
 	}
 
 	private void OnPlayerIrrigate ()
@@ -131,8 +133,12 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
+  private void OnPlayerFailedAction()
+  {
+    PlaySound(AudioType.Wrong);
+  }
 
-	[SerializeField]
+  [SerializeField]
 	private AudioStruct[] _audios;
 
 }

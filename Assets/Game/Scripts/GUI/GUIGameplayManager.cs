@@ -30,10 +30,19 @@ public class GUIGameplayManager : MonoBehaviour
     OnPause ();
   } 
 
+  public void StartPlaying ()
+  {
+    StartCoroutine (HideTutorial ());
+  }
+
   private void Awake ()
   {
-    ActionsManager.OnStageFinished += OnStageFinished;
     PlayerManager.OnPlayerDied += OnPlayerDied;
+  }
+
+  private void OnDestroy ()
+  {
+    PlayerManager.OnPlayerDied -= OnPlayerDied;
   }
 
   private void Start ()
@@ -42,10 +51,11 @@ public class GUIGameplayManager : MonoBehaviour
     gameOverTweener.SetOnFinishedCallback (OnGameOverTweenerFinished);
     continueButton.SetActive (false);
     pausePanel.SetActive (false);
-  }
+    StartCoroutine (ShowTutorial ());
 
-  private void OnStageFinished (ActionsManager.Stage stage)
-  {
+#if !UNITY_STANDALONE && !UNITY_EDITOR
+    pauseExitButton.SetActive (false);
+#endif
   }
 
   private void OnPlayerDied ()
@@ -59,6 +69,34 @@ public class GUIGameplayManager : MonoBehaviour
     result.text = string.Format ("You survived {0} days", ActionsManager.Instance.ActionsMadeByPlayerOnPreviousStages.Count);
     yield return new WaitForSeconds (2);
     gameOverTweener.PlayForward ();
+  }
+
+  private IEnumerator ShowTutorial ()
+  {
+    tutorialCanvasGroup.interactable = true;
+    tutorialCanvasGroup.blocksRaycasts = true;
+    GameController.Instance.PauseGameplay ();
+    float time = 0;
+    while (time < 1)
+    {
+      tutorialCanvasGroup.alpha = time;
+      yield return null;
+      time += Time.deltaTime;
+    }
+  }
+
+  private IEnumerator HideTutorial ()
+  {
+    float duration = 1;
+    while (duration > 0)
+    {
+      tutorialCanvasGroup.alpha = duration;
+      yield return null;
+      duration -= Time.deltaTime;
+    }
+    tutorialCanvasGroup.interactable = false;
+    tutorialCanvasGroup.blocksRaycasts = false;
+    GameController.Instance.ResumeGameplay ();
   }
 
   private void OnGameOverTweenerFinished ()
@@ -80,4 +118,10 @@ public class GUIGameplayManager : MonoBehaviour
 
   [SerializeField]
   private Button pauseButton;
+
+  [SerializeField]
+  private CanvasGroup tutorialCanvasGroup;
+
+  [SerializeField]
+  private GameObject pauseExitButton;
 }
