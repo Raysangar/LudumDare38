@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent (typeof (BoxCollider))]
 public abstract class SmartObject : MonoBehaviour
 {
   public static System.Action<SmartObject> OnPlayerInteraction = delegate { };
@@ -36,6 +36,11 @@ public abstract class SmartObject : MonoBehaviour
     get { return currentUsage; }
   }
 
+  public bool BrokenOnCurrentStage
+  {
+    get { return brokenOnCurrentStage; }
+  }
+
   public int ThirstFactor
   {
     get { return thirstFactor; }
@@ -51,30 +56,30 @@ public abstract class SmartObject : MonoBehaviour
     get { return holdObject; }
   }
 
-  public virtual void Interact()
+  public virtual void Interact ()
   {
-    OnPlayerInteraction(this);
+    OnPlayerInteraction (this);
   }
 
-  public virtual void AddUsage()
+  public virtual void AddUsage ()
   {
     currentUsage++;
   }
 
-  public virtual void SetGraphicByUsage()
+  public virtual void SetGraphicByUsage ()
   {
 
   }
 
-  public virtual void LaunchErrorAction(ObjectType type)
+  public virtual void LaunchErrorAction (ObjectType type)
   {
     if (this.type == type)
     {
-      OnPlayerFailedAction();
+      OnPlayerFailedAction ();
     }
   }
 
-  public void Start()
+  public void Start ()
   {
     ActionsManager.OnStageFinished += OnStageFinished;
     TransitionStageAnimationManager.OnHalfAnimationDone += OnHalfAnimationDone;
@@ -88,35 +93,37 @@ public abstract class SmartObject : MonoBehaviour
     GameController.OnActionErrated -= LaunchErrorAction;
   }
 
-  void OnHalfAnimationDone()
+  protected virtual void OnHalfAnimationDone ()
   {
-    SetGraphicByUsage();
+    SetGraphicByUsage ();
+    brokenOnCurrentStage = false;
   }
 
-  public void SetMaxUsage()
+  public void SetMaxUsage ()
   {
     currentUsage = maxUsage;
   }
 
-  public void BreakObject()
+  public void BreakObject ()
   {
     currentUsage = -1;
+    brokenOnCurrentStage = true;
   }
 
-  public void SpendUsage()
+  public void SpendUsage ()
   {
     currentUsage--;
   }
 
-  private void OnStageFinished(ActionsManager.Stage stage)
+  private void OnStageFinished (ActionsManager.Stage stage)
   {
     if (type == stage.FirstAction.type || type == stage.SecondAction.type)
     {
-      PlayerManager.Instance.EatAndDrink(-hungerFactor, -thirstFactor);
+      PlayerManager.Instance.EatAndDrink (-hungerFactor, -thirstFactor);
     }
     if (holdObject != null)
     {
-      holdObject.SetActive(false);
+      holdObject.SetActive (false);
     }
   }
 
@@ -142,4 +149,5 @@ public abstract class SmartObject : MonoBehaviour
   private GameObject holdObject;
 
   private int currentUsage = -1;
+  private bool brokenOnCurrentStage = false;
 }

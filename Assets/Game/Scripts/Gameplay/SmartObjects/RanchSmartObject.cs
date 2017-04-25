@@ -81,4 +81,5 @@ public class RanchSmartObject : SmartObject
 
   [SerializeField]
   private int foodAmount;
+
 }

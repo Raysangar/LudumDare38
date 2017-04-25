@@ -22,6 +22,7 @@ public class SmartObjectHUDManager : MonoBehaviour
   private void OnDestroy ()
   {
     ActionsManager.OnStageFinished -= OnStageFinished;
+    TransitionStageAnimationManager.OnHalfAnimationDone -= UpdateSmartObjectInfo;
   }
 
   private void UpdateSmartObjectInfo ()

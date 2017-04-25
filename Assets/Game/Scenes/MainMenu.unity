@@ -11213,7 +11213,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  initialPosition: {x: 0, y: -1200}
+  initialPosition: {x: 0, y: -1250}
   finalPosition: {x: 0, y: 2000}
 --- !u!1 &820999863
 GameObject:

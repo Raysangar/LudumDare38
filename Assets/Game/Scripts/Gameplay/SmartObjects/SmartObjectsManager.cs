@@ -86,7 +86,7 @@ public class SmartObjectsManager : MonoBehaviour
 
 	public void AddUsagesToRanch ()
 	{
-		if (smartObjectsByType [SmartObject.ObjectType.Ranch].CurrentUsage != -1 && smartObjectsByType[SmartObject.ObjectType.Garden].HoldObject.activeInHierarchy) {
+		if ((smartObjectsByType [SmartObject.ObjectType.Ranch].CurrentUsage != -1 || smartObjectsByType[SmartObject.ObjectType.Ranch].BrokenOnCurrentStage) && smartObjectsByType[SmartObject.ObjectType.Garden].HoldObject.activeInHierarchy) {
 			smartObjectsByType [SmartObject.ObjectType.Ranch].SetMaxUsage ();
 		} else {
 			smartObjectsByType [SmartObject.ObjectType.Ranch].LaunchErrorAction (SmartObject.ObjectType.Ranch);
